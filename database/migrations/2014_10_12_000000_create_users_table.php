@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->unsignedBigInteger('no_hp')->unique();
             $table->string('tmp_lahir');
             $table->string('tgl_lahir');
             $table->string('provinsi')->default('-');
@@ -25,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('kelurahan')->default('-');
             $table->integer('kodepos')->default(0);
             $table->string('img_ktp')->default('-');
-            $table->string('img_ktp_selfi')->default('-');
+            $table->string('img_ktp_selfi')->default('-'); 
             $table->string('detail_alamat')->default('-');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
