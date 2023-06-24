@@ -69,34 +69,16 @@
                         </div>
 
 
-                        <div class="row mb-3">
-                            <label for="detail_alamat" class="col-md-4 col-form-label text-md-end">{{ __('Detail Alamat') }}</label>
+                        <input type="hidden" name="provinsi" value="-">
+                        <input type="hidden" name="kabupaten" value="-">
+                        <input type="hidden" name="kecamatan" value="-">
+                        <input type="hidden" name="kelurahan" value="-">
+                        <input type="hidden" name="kodepos" value="0">
+                        <input type="hidden" name="img_ktp" value="-">
+                        <input type="hidden" name="img_ktp_selfi" value="-">
+                        <input type="hidden" name="detail_alamat" value="-">
+                        <input type="hidden" name="role" value="penjual">
 
-                            <div class="col-md-6">
-                                <input id="detail_alamat" type="text" class="form-control @error('detail_alamat') is-invalid @enderror" name="detail_alamat" value="{{ old('detail_alamat') }}" required autocomplete="detail_alamat" autofocus>
-
-                                @error('detail_alamat')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="row mb-3">
-                            <label for="role" class="col-md-4 col-form-label text-md-end">{{ __('role') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
-
-                                @error('role')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
 
                         <div class="row mb-3">

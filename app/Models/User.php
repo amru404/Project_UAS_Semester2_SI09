@@ -52,4 +52,5 @@ class User extends Authenticatable
     public function RelasiPesanan2(){
         return $this->belongsTo(Pesanan::class);
     }
+    
 }
