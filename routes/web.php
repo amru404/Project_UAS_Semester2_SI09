@@ -29,8 +29,8 @@ route::get('daerah',[adminController::class,'cekkota'])->name('daerah');
 
 Route::prefix('dashboard')->group(function(){
 
-    Route::get('/dashboards/index',
-        [DashboardController::class,'index'])-> name('dashboard');
+    Route::get('/',
+        [DashboardController::class,'index'])-> name('dashboard');  
 
 
 });
