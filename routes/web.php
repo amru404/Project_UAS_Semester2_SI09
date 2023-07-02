@@ -27,12 +27,9 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 route::get('daerah',[adminController::class,'cekkota'])->name('daerah');
 route::get('profile',[allUserController::class,'profile'])->name('profile')->middleware('role');
-<<<<<<< HEAD
 route::get('user/profile',[allUserController::class,'profile'])->name('user.profile');
 
 Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
 Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
-=======
 route::get('/index',
     [allUserController::class,'index']);
->>>>>>> 7faeae4a8b16b57e7b963452d764a96c0a1d451b
