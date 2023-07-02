@@ -11,8 +11,11 @@ class allUserController extends Controller
     $this->middleware('auth');
     
 }
-    //
+    
     function profile(){
         return view('pembeli/profile');
+    }
+    function index(){
+        return view('pembeli/index');
     }
 }

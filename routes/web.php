@@ -21,8 +21,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('role');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 route::get('daerah',[adminController::class,'cekkota'])->name('daerah');
 route::get('profile',[allUserController::class,'profile'])->name('profile')->middleware('role');
+route::get('/index',
+    [allUserController::class,'index']);
