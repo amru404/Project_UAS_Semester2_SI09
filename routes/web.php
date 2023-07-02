@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\allUserController;
-
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +26,7 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 route::get('daerah',[adminController::class,'cekkota'])->name('daerah');
 route::get('profile',[allUserController::class,'profile'])->name('profile')->middleware('role');
+route::get('user/profile',[allUserController::class,'profile'])->name('user.profile');
+
+Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
+Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');

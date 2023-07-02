@@ -52,6 +52,7 @@
         <div class="card-body">
          <h5>Produk yang anda jual</h5><br>
          <div class="card">
+         <a href="{{ route('formPenjual',$user->id)}}" type="button" class="btn btn-outline-primary ms-1">Jual Produk</button>
           
          </div>
       </div>
