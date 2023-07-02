@@ -20,8 +20,16 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'no_hp',
         'tmp_lahir',
         'tgl_lahir',
+        'provinsi',
+        'kabupaten',
+        'kecamatan',
+        'kelurahan',
+        'kodepos',
+        'img_ktp',
+        'img_ktp_selfi',
         'detail_alamat',
         'role',
         'password',
@@ -52,4 +60,5 @@ class User extends Authenticatable
     public function RelasiPesanan2(){
         return $this->belongsTo(Pesanan::class);
     }
+    
 }

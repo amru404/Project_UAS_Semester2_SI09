@@ -23,7 +23,9 @@ class CreateProduksTable extends Migration
             $table->integer('gambar');
             $table->string('deskripsi_produk');
             $table->unsignedBigInteger('kategori_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('kategori_id')->references('id')->on('kategoris');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
