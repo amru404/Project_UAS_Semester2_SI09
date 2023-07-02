@@ -14,7 +14,7 @@ class allUserController extends Controller
     $this->middleware('auth');
     
 }
-    //
+    
     function profile(){
         $user = User::all()->where('id', Auth::user()->id)->first();
         return view('pembeli/profile',compact('user'));
@@ -97,5 +97,8 @@ class allUserController extends Controller
                 return redirect()->route('user.profile')->with(['error' => 'Data Gagal Diupdate!']);
             }
         }
+    }
+    function index(){
+        return view('pembeli/index');
     }
 }
