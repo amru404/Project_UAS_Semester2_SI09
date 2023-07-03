@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {   $kategoris =Kategoris::all();
-        return view('dashboards/index', compact('kategoris'));
+        return view('dashboards/category/index', compact('kategoris'));
     }
 
     

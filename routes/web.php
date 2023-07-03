@@ -44,9 +44,9 @@ route::get('user/profile',[allUserController::class,'profile'])->name('user.prof
 
 Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
 Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
-<<<<<<< HEAD
+
 route::get('/index',[allUserController::class,'index']);
-=======
+
 route::get('/index',
     [allUserController::class,'index']);
->>>>>>> 835b9de748b17c51d3c9b764170315fdb2066673
+
