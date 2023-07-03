@@ -50,6 +50,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'nik' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'no_hp' => ['required', 'string', 'max:255'],
@@ -64,6 +65,7 @@ class RegisterController extends Controller
             'img_ktp_selfi' => ['required', 'string', 'max:255'],
             'detail_alamat' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'max:255'],
+            'status' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -77,6 +79,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'nik' => $data['nik'],
             'name' => $data['name'],
             'email' => $data['email'],
             'no_hp' => $data['no_hp'],
@@ -91,6 +94,7 @@ class RegisterController extends Controller
             'img_ktp_selfi' => $data['img_ktp_selfi'],
             'detail_alamat' => $data['detail_alamat'],
             'role' => $data['role'],
+            'status' => $data['status'],
             'password' => Hash::make($data['password']),
         ]);
     }

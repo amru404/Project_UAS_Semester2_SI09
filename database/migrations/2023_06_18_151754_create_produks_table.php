@@ -20,7 +20,7 @@ class CreateProduksTable extends Migration
             $table->float('harga',8,2);
             $table->integer('stok');
             $table->integer('min_stok');
-            $table->integer('gambar');
+            $table->string('gambar');
             $table->string('deskripsi_produk');
             $table->unsignedBigInteger('kategori_id');
             $table->unsignedBigInteger('user_id');
