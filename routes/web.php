@@ -4,6 +4,8 @@ use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\allUserController;
  
 /*
@@ -23,17 +25,32 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('role');
+Route::get('/Adminhome', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('role');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 route::get('daerah',[adminController::class,'cekkota'])->name('daerah');
+
+
+
+Route::prefix('dashboard')->group(function(){
+
+    Route::get('/',
+        [DashboardController::class,'index'])-> name('dashboard');  
+
+
+});
+
 route::get('profile',[allUserController::class,'profile'])->name('profile')->middleware('role');
 route::get('user/profile',[allUserController::class,'profile'])->name('user.profile');
 
 Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
 Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
 
+
 route::get('/index',
     [allUserController::class,'index']);
 route::get('/kategori',
     [allUserController::class,'kategori'])->name('kategori');
 
+route::get('/index',[allUserController::class,'index']);
+route::get('/index',
+    [allUserController::class,'index']);
