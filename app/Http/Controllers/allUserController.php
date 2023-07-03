@@ -120,4 +120,10 @@ class allUserController extends Controller
     function index(){
         return view('pembeli/index');
     }
+
+    function kategori(){
+        return view('pembeli/kategori');
+    }
+
+
 }

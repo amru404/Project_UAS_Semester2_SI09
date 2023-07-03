@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategoris;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index()
-    {
-        return view('dashboard/index');
+    {   $kategoris =Kategoris::all();
+        return view('dashboards/index', compact('kategoris'));
     }
 
     
