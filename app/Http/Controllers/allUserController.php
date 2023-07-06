@@ -29,6 +29,7 @@ class allUserController extends Controller
          
         
             $this->validate($request, [
+                'nik'     => 'required',
                 'name'     => 'required',
                 'email'   => 'required',
                 'no_hp'   => 'required',
@@ -40,6 +41,7 @@ class allUserController extends Controller
                 'kodepos'   => 'required',
                 'detail_alamat'   => 'required',
                 'role'   => 'required',
+                'status'   => 'required',
             ]);
         
             //get data Blog by ID
@@ -48,6 +50,7 @@ class allUserController extends Controller
             if($request->file('img_ktp') == "") {
         
                 $user->update([
+                    'nik'     => $request->nik,
                     'name'     => $request->name,
                     'email'   => $request->email,
                     'no_hp'   => $request->no_hp,
@@ -59,6 +62,8 @@ class allUserController extends Controller
                     'kodepos'   => $request->kodepos,
                     'detail_alamat'   => $request->detail_alamat,
                     'role'   => $request->role,
+                    'status'     => $request->status,
+
                 ]);
         
                 // dd($user);
@@ -66,10 +71,20 @@ class allUserController extends Controller
         
                 //hapus old image
                 //upload new image
-                $image = $request->file('img_ktp');
-                $image->storeAs('public/img_ktp', $image->hashName());
+                $img_ktp = $request->file('img_ktp');
+                $destinationPath = 'img_ktp';
+                $profileimg_ktp = date('YmdHis') . "." . $img_ktp->getClientOriginalExtension();
+                $img_ktp->move($destinationPath, $profileimg_ktp);
+                $ktp = $profileimg_ktp;
+
+                $img_ktp_selfi = $request->file('img_ktp_selfi');
+                $destinationPath = 'img_ktp_selfi';
+                $profileimg_ktp_selfi = date('YmdHis') . "." . $img_ktp_selfi->getClientOriginalExtension();
+                $img_ktp_selfi->move($destinationPath, $profileimg_ktp_selfi);
+                $ktp_selfi = $profileimg_ktp_selfi;
         
                 $user->update([
+                    'nik'     => $request->nik,
                     'name'     => $request->name,
                     'email'   => $request->email,
                     'no_hp'   => $request->no_hp,
@@ -79,16 +94,20 @@ class allUserController extends Controller
                     'kecamatan'   => $request->kecamatan,
                     'kelurahan'   => $request->kelurahan,
                     'kodepos'   => $request->kodepos,
-                    'img_ktp'     => $image->hashName(),
-                    'img_ktp_selfi'   => $request->img_ktp_selfi,
+                    'img_ktp'     => $ktp,
+                    'img_ktp_selfi'   => $ktp_selfi,
                     'detail_alamat'   => $request->detail_alamat,
                     'role'   => $request->role,
+                    'status'     => $request->status,
+
                 ]);
 
                 // dd($user);
         
             }
         
+            
+
             if($user){
                 //redirect dengan pesan sukses
                 return redirect()->route('user.profile')->with(['success' => 'Data Berhasil Diupdate!']);
