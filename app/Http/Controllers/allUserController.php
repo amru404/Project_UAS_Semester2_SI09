@@ -105,6 +105,15 @@ class allUserController extends Controller
     function kategori(){
         return view('pembeli/kategori');
     }
+    function detail(){
+        return view('pembeli/detail');
+    }
+    function checkout(){
+        return view('pembeli/checkout');
+    }
+    function cart(){
+        return view('pembeli/cart');
+    }
 
 
 }

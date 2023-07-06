@@ -1,5 +1,4 @@
 @extends ('template/dashboard/index')
-
 @section('content')
 <div class="col-lg-12">
   <div class="card rounded-lg">

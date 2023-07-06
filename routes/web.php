@@ -46,11 +46,11 @@ Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->na
 Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
 
 
-route::get('/index',
-    [allUserController::class,'index']);
-route::get('/kategori',
-    [allUserController::class,'kategori'])->name('kategori');
-
 route::get('/index',[allUserController::class,'index']);
-route::get('/index',
-    [allUserController::class,'index']);
+route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+route::get('/pembeli',[allUserController::class,'index']);
+route::get('/detail',[allUserController::class,'detail'])->name('detail');
+route::get('/checkout',[allUserController::class,'checkout'])->name('checkout');
+route::get('/cart',[allUserController::class,'cart'])->name('cart');
+
+
