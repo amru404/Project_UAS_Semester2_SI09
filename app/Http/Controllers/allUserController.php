@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Respon
 
 class allUserController extends Controller
 {
@@ -12,7 +13,5 @@ class allUserController extends Controller
     
 }
     //
-    function profile(){
-        return view('pembeli/profile');
-    }
+    
 }

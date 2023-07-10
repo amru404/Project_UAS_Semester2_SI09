@@ -15,12 +15,12 @@ class CreateProduksTable extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
+            $table->string('kode')->unique();
             $table->string('nama');
-            $table->float('harga',8,2);
-            $table->integer('stok');
-            $table->integer('min_stok');
-            $table->integer('gambar');
+            $table->unsignedBigInteger('harga',8,2);
+            $table->unsignedBigInteger('stok');
+            $table->unsignedBigInteger('min_stok');
+            $table->unsignedBigInteger('gambar');
             $table->string('deskripsi_produk');
             $table->unsignedBigInteger('kategori_id');
             $table->unsignedBigInteger('user_id');

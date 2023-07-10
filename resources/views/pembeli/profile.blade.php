@@ -50,9 +50,35 @@
     <div class="col-md-12">
       <div class="card mb-4 mb-md-0">
         <div class="card-body">
-         <h5>Produk yang anda jual</h5><br>
-         <div class="card">
-          
+          @if ( Auth::user()->role == 'penjual')
+          <h5>Produk yang anda jual</h5><br>
+          <div class="card">
+           @foreach ($produkJualan as $data)
+           
+ 
+           <p>nama : {{$data['nama']}}</p>
+           <p>stok : {{$data['stok']}}</p>
+           <p>harga : {{$data['harga']}}</p>
+           <p>terjual : {{$terjual}}</p>
+           <p>gambar : {{$data['gambar']}}</p>
+               <hr>
+           @endforeach
+
+
+           @elseif ( Auth::user()->role == 'admin')
+           <h5>Produk yang anda jual</h5><br>
+           <div class="card">
+            @foreach ($produkJualan as $data)
+  
+            <p>{{$data['nama']}}</p>
+                
+            @endforeach
+ 
+
+           @else 
+
+           <h5 class="text-center">Mulai Jualan Yuk!</h5>
+          @endif
          </div>
       </div>
     </div>
