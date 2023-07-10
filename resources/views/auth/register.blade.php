@@ -101,11 +101,15 @@
                         <input type="hidden" name="kecamatan" value="-">
                         <input type="hidden" name="kelurahan" value="-">
                         <input type="hidden" name="kodepos" value="0">
+                        <input type="hidden" name="no_hp" value="0">
                         <input type="hidden" name="img_ktp" value="-">
                         <input type="hidden" name="img_ktp_selfi" value="-">
                         <input type="hidden" name="detail_alamat" value="-">
                         <input type="hidden" name="role" value="pembeli">
+<<<<<<< HEAD
+=======
                         <input type="hidden" name="status" value="-">
+>>>>>>> 3e476191d3eb4ab9e0619a16550ee85ac90b8cd6
 
 
 

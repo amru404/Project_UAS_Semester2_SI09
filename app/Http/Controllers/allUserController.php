@@ -14,7 +14,7 @@ class allUserController extends Controller
     $this->middleware('auth');
     
 }
-    
+   
     function profile(){
         $user = User::all()->where('id', Auth::user()->id)->first();
         return view('pembeli/profile',compact('user'));
@@ -133,6 +133,5 @@ class allUserController extends Controller
     function cart(){
         return view('pembeli/cart');
     }
-
 
 }

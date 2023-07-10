@@ -9,10 +9,26 @@ use App\Models\Produk;
 class Kategoris extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['name','created_at','updated_at'];
+	public $timestamps = false;
+    protected $fillable = ['name'];
 
     public function RelasiProduk(){
     return $this->belongsTo(Produk::class);
     }
+
+	/**
+	 * @return mixed
+	 */
+	public function getFillable() {
+		return $this->fillable;
+	}
+	
+	/**
+	 * @param mixed $fillable 
+	 * @return self
+	 */
+	public function setFillable($fillable): self {
+		$this->fillable = $fillable;
+		return $this;
+	}
 }

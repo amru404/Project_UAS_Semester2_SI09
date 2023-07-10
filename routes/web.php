@@ -4,7 +4,7 @@ use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\allUserController;
  
@@ -28,14 +28,26 @@ Auth::routes();
 Route::get('/Adminhome', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('role');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 route::get('daerah',[adminController::class,'cekkota'])->name('daerah');
+route::get('profile',[ProfileController::class,'index'])->name('profile');
 
 
 
 Route::prefix('dashboard')->group(function(){
 
-    Route::get('/',
-        [DashboardController::class,'index'])-> name('dashboard');  
-
+    Route::get('/category',
+        [DashboardController::class,'index'])-> name('category'); 
+        
+    Route::get('/category/add',
+        [DashboardController::class,'create'])->name('addCategory');
+    
+    Route::post('/category',
+        [DashboardController::class,"store"])->name('category.store');
+    Route::get('/category/{item}/edit',
+        [DashboardController::class,'edit'])->name('category.edit');
+    Route::put('category/{item}',
+        [DashboardController::class,'update'])->name('category.update');
+    Route::delete('category/{item}',
+        [DashboardController::class,'delete'])->name('category.destroy');
 
 });
 
@@ -45,6 +57,12 @@ route::get('user/profile',[allUserController::class,'profile'])->name('user.prof
 Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
 Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
 
+
+
+route::get('/index',[allUserController::class,'index']);
+
+route::get('/index',
+    [allUserController::class,'index']);
 
 route::get('/index',[allUserController::class,'index']);
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');

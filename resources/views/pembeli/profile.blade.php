@@ -50,6 +50,38 @@ Data User
     <div class="col-md-12">
       <div class="card mb-4 mb-md-0">
         <div class="card-body">
+<<<<<<< HEAD
+          @if ( Auth::user()->role == 'penjual')
+          <h5>Produk yang anda jual</h5><br>
+          <div class="card">
+           @foreach ($produkJualan as $data)
+           
+ 
+           <p>nama : {{$data['nama']}}</p>
+           <p>stok : {{$data['stok']}}</p>
+           <p>harga : {{$data['harga']}}</p>
+           <p>terjual : {{$terjual}}</p>
+           <p>gambar : {{$data['gambar']}}</p>
+               <hr>
+           @endforeach
+
+
+           @elseif ( Auth::user()->role == 'admin')
+           <h5>Produk yang anda jual</h5><br>
+           <div class="card">
+            @foreach ($produkJualan as $data)
+  
+            <p>{{$data['nama']}}</p>
+                
+            @endforeach
+ 
+
+           @else 
+
+           <h5 class="text-center">Mulai Jualan Yuk!</h5>
+          @endif
+         </div>
+=======
           <h5>Produk yang anda jual</h5><br>
           
           <div class="card">
@@ -57,6 +89,7 @@ Data User
             <img src="{{asset('img_ktp_selfi/' .$user->img_ktp_selfi)}}" style="height: 60px; width:40px">
             
           </div>
+>>>>>>> 3e476191d3eb4ab9e0619a16550ee85ac90b8cd6
       </div>
     </div>
   </div>
