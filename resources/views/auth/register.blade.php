@@ -106,10 +106,7 @@
                         <input type="hidden" name="img_ktp_selfi" value="-">
                         <input type="hidden" name="detail_alamat" value="-">
                         <input type="hidden" name="role" value="pembeli">
-<<<<<<< HEAD
-=======
                         <input type="hidden" name="status" value="-">
->>>>>>> 3e476191d3eb4ab9e0619a16550ee85ac90b8cd6
 
 
 
