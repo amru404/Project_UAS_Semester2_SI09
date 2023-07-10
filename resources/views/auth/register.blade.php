@@ -1,7 +1,5 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -106,12 +104,7 @@
                         <input type="hidden" name="img_ktp_selfi" value="-">
                         <input type="hidden" name="detail_alamat" value="-">
                         <input type="hidden" name="role" value="pembeli">
-<<<<<<< HEAD
-=======
                         <input type="hidden" name="status" value="-">
->>>>>>> 3e476191d3eb4ab9e0619a16550ee85ac90b8cd6
-
-
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password')
@@ -152,5 +145,9 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</div> --}}
+
+<html>
+
+    <h1 style="text-align: center">Not Found</h1>
+</html>

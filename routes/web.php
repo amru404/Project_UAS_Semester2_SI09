@@ -20,7 +20,7 @@ use App\Http\Controllers\allUserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 
@@ -28,7 +28,6 @@ Auth::routes();
 Route::get('/Adminhome', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('role');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 route::get('daerah',[adminController::class,'cekkota'])->name('daerah');
-route::get('profile',[ProfileController::class,'index'])->name('profile');
 
 
 
@@ -50,8 +49,6 @@ Route::prefix('dashboard')->group(function(){
         [DashboardController::class,'delete'])->name('category.destroy');
 
 });
-
-route::get('profile',[allUserController::class,'profile'])->name('profile')->middleware('role');
 route::get('user/profile',[allUserController::class,'profile'])->name('user.profile');
 
 Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
