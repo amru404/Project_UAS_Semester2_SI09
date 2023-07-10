@@ -1,7 +1,7 @@
 @extends('pembeli/indexProfile')
 
 @section('breadcrumb')
-    Data User
+Data User
 @endsection
 
 @section('content')
@@ -50,6 +50,7 @@
     <div class="col-md-12">
       <div class="card mb-4 mb-md-0">
         <div class="card-body">
+<<<<<<< HEAD
           @if ( Auth::user()->role == 'penjual')
           <h5>Produk yang anda jual</h5><br>
           <div class="card">
@@ -80,8 +81,19 @@
            <h5 class="text-center">Mulai Jualan Yuk!</h5>
           @endif
          </div>
+=======
+          <h5>Produk yang anda jual</h5><br>
+          
+          <div class="card">
+            <img src="{{asset('img_ktp/' .$user->img_ktp)}}" style="height: 60px; width:40px">
+            <img src="{{asset('img_ktp_selfi/' .$user->img_ktp_selfi)}}" style="height: 60px; width:40px">
+            
+          </div>
+>>>>>>> 3e476191d3eb4ab9e0619a16550ee85ac90b8cd6
       </div>
     </div>
   </div>
+  <a href="{{ route('formPenjual',$user->id)}}" type="button" class="btn btn-outline-primary ms-1">Jual Produk</button>
 </div>
+
 @endsection

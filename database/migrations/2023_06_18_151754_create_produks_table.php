@@ -17,10 +17,10 @@ class CreateProduksTable extends Migration
             $table->id();
             $table->string('kode')->unique();
             $table->string('nama');
-            $table->unsignedBigInteger('harga',8,2);
             $table->unsignedBigInteger('stok');
             $table->unsignedBigInteger('min_stok');
             $table->unsignedBigInteger('gambar');
+            $table->float('harga',8,2);
             $table->string('deskripsi_produk');
             $table->unsignedBigInteger('kategori_id');
             $table->unsignedBigInteger('user_id');
