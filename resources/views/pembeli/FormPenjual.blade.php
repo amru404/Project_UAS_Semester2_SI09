@@ -18,7 +18,16 @@
                             @method('PUT')
 
 
+                            <div class="form-group row">
+                                    
+                                    <label class="col-4 col-form-label" for="nik">NIK</label> 
+                                    <div class="col-8">
+                                    <input id="nik" name="nik" type="text" class="form-control" value="{{ old('nik', $user->nik) }}">
+                                    </div>
+                                </div>
+
                                 <div class="form-group row">
+                                    
                                     <label class="col-4 col-form-label" for="name">Nama</label> 
                                     <div class="col-8">
                                     <input id="name" name="name" type="text" class="form-control" value="{{ old('name', $user->name) }}">
@@ -100,14 +109,16 @@
                                     <input id="img_ktp" name="img_ktp" type="file" class="form-control" value="{{ old('img_ktp', $user->img_ktp) }}">
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
                                     <label for="img_ktp_selfi" class="col-4 col-form-label">Foto Selfi KTP</label> 
                                     <div class="col-8">
-                                    <input id="img_ktp_selfi" name="img_ktp_selfi" type="text" class="form-control" value="{{ old('img_ktp_selfi', $user->img_ktp_selfi) }}">
+                                    <input id="img_ktp_selfi" name="img_ktp_selfi" type="file" class="form-control" value="{{ old('img_ktp_selfi', $user->img_ktp_selfi) }}">
                                     </div>
-                                    
                                 </div>
-                                <input type="hidden" name="role" value="penjual"> 
+
+                                <input type="hidden" name="status" value="proses">
+                                <input type="hidden" name="role" value="pembeli"> 
                             <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>
 

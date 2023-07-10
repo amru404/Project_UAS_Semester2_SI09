@@ -33,9 +33,20 @@ route::get('daerah',[adminController::class,'cekkota'])->name('daerah');
 
 Route::prefix('dashboard')->group(function(){
 
-    Route::get('/',
-        [DashboardController::class,'index'])-> name('dashboard');  
-
+    Route::get('/category',
+        [DashboardController::class,'index'])-> name('category'); 
+        
+    Route::get('/category/add',
+        [DashboardController::class,'create'])->name('addCategory');
+    
+    Route::post('/category',
+        [DashboardController::class,"store"])->name('category.store');
+    Route::get('/category/{item}/edit',
+        [DashboardController::class,'edit'])->name('category.edit');
+    Route::put('category/{item}',
+        [DashboardController::class,'update'])->name('category.update');
+    Route::delete('category/{item}',
+        [DashboardController::class,'delete'])->name('category.destroy');
 
 });
 
@@ -45,8 +56,14 @@ route::get('user/profile',[allUserController::class,'profile'])->name('user.prof
 Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
 Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
 
+
 route::get('/index',[allUserController::class,'index']);
 
 route::get('/index',
     [allUserController::class,'index']);
+
+route::get('/index', [allUserController::class,'index']);
+route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+route::get('/index',[allUserController::class,'index']);
+route::get('/index',[allUserController::class,'index']);
 

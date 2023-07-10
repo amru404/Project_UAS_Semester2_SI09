@@ -60,7 +60,7 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="single-features">
 						<div class="f-icon">
-							<img src="img/features/f-icon1.png" alt="">
+							<img src="/assetuser/img/features/f-icon1.png" alt="">
 						</div>
 						<h6>Free Delivery</h6>
 						<p>Free Shipping on all order</p>
@@ -70,7 +70,7 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="single-features">
 						<div class="f-icon">
-							<img src="img/features/f-icon2.png" alt="">
+							<img src="/assetuser/img/features/f-icon2.png" alt="">
 						</div>
 						<h6>Return Policy</h6>
 						<p>Free Shipping on all order</p>
@@ -80,7 +80,7 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="single-features">
 						<div class="f-icon">
-							<img src="img/features/f-icon3.png" alt="">
+							<img src="/assetuser/img/features/f-icon3.png" alt="">
 						</div>
 						<h6>24/7 Support</h6>
 						<p>Free Shipping on all order</p>
@@ -90,7 +90,7 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="single-features">
 						<div class="f-icon">
-							<img src="img/features/f-icon4.png" alt="">
+							<img src="/assetuser/img/features/f-icon4.png" alt="">
 						</div>
 						<h6>Secure Payment</h6>
 						<p>Free Shipping on all order</p>
@@ -111,7 +111,7 @@
 							<div class="single-deal">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="/assetuser/img/category/c1.jpg" alt="">
-								<a href="img/category/c1.jpg" class="img-pop-up" target="_blank">
+								<a href="/assetuser/img/category/c1.jpg" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">Sneaker for Sports</h6>
 									</div>
@@ -122,7 +122,7 @@
 							<div class="single-deal">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="/assetuser/img/category/c2.jpg" alt="">
-								<a href="img/category/c2.jpg" class="img-pop-up" target="_blank">
+								<a href="/assetuser/img/category/c2.jpg" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">Sneaker for Sports</h6>
 									</div>
@@ -133,7 +133,7 @@
 							<div class="single-deal">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="/assetuser/img/category/c3.jpg" alt="">
-								<a href="img/category/c3.jpg" class="img-pop-up" target="_blank">
+								<a href="/assetuser/img/category/c3.jpg" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">Product for Couple</h6>
 									</div>
@@ -144,7 +144,7 @@
 							<div class="single-deal">
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="/assetuser/img/category/c4.jpg" alt="">
-								<a href="img/category/c4.jpg" class="img-pop-up" target="_blank">
+								<a href="/assetuser/img/category/c4.jpg" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">Sneaker for Sports</h6>
 									</div>
@@ -157,7 +157,7 @@
 					<div class="single-deal">
 						<div class="overlay"></div>
 						<img class="img-fluid w-100" src="/assetuser/img/category/c5.jpg" alt="">
-						<a href="img/category/c5.jpg" class="img-pop-up" target="_blank">
+						<a href="/assetuser/img/category/c5.jpg" class="img-pop-up" target="_blank">
 							<div class="deal-details">
 								<h6 class="deal-title">Sneaker for Sports</h6>
 							</div>
@@ -418,7 +418,7 @@
 					<!-- single product -->
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-						<img class="img-fluid" src="/assetuser/img/product/p8.jpg" alt="">
+							<img class="img-fluid" src="/assetuser/img/product/p8.jpg" alt="">
 							<div class="product-details">
 								<h6>addidas New Hammer sole
 									for Sports person</h6>

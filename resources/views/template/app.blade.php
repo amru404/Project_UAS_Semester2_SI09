@@ -5,7 +5,7 @@
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Favicon-->
-	<link rel="shortcut icon" href="img/fav.png">
+	<link rel="shortcut icon" href="/assetuser/img/fav.png">
 	<!-- Author Meta -->
 	<meta name="author" content="CodePixar">
 	<!-- Meta Description -->
@@ -55,7 +55,7 @@
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Shop</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
+									<li class="nav-item"><a class="nav-link" href="{{ route('kategori') }}">Shop Category</a></li>
 									<li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
 									<li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
 									<li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>

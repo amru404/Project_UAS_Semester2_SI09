@@ -38,7 +38,7 @@
   <!--Start sidebar-wrapper-->
    <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
      <div class="brand-logo">
-      <a href="{{route('dashboard')}}">
+      <a href="{{route('category')}}">
        <img src="{{ asset('template/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
        <h5 class="logo-text">Understimate Admin</h5>
      </a>
