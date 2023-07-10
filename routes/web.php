@@ -44,7 +44,6 @@ route::get('user/profile',[allUserController::class,'profile'])->name('user.prof
 
 Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
 Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
-<<<<<<< HEAD
 
 
 route::get('/index',[allUserController::class,'index']);
@@ -55,9 +54,7 @@ route::get('/checkout',[allUserController::class,'checkout'])->name('checkout');
 route::get('/cart',[allUserController::class,'cart'])->name('cart');
 
 
-=======
 route::get('/index', [allUserController::class,'index']);
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
 route::get('/index',[allUserController::class,'index']);
 route::get('/index',[allUserController::class,'index']);
->>>>>>> 4cad26231fe8eb7605f10e29ef78c3c93bd3279f
