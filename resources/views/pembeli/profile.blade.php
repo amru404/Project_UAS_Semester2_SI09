@@ -53,14 +53,13 @@ Data User
           @if ( Auth::user()->role == 'penjual')
           <h5>Produk yang anda jual</h5><br>
           <div class="card">
-           @foreach ($produkJualan as $data)
+           @foreach ($jualan as $data)
            
- 
-           <p>nama : {{$data['nama']}}</p>
-           <p>stok : {{$data['stok']}}</p>
-           <p>harga : {{$data['harga']}}</p>
-           <p>terjual : {{$terjual}}</p>
-           <p>gambar : {{$data['gambar']}}</p>
+           <p>nama : {{$data->UserID->nama  }}</p>
+           <p>stok : {{$data->stok}}</p>
+           <p>harga : {{$data->harga}}</p>
+           {{-- <p>terjual : {{$da}}</p> --}}
+           <p>gambar : {{$data->gambar}}</p>
                <hr>
            @endforeach
 
@@ -80,10 +79,7 @@ Data User
            <h5 class="text-center">Mulai Jualan Yuk!</h5>
           @endif
          </div>
-         @if (  Auth::user()->role  == 'penjual') 
-         <h5>Produk yang anda jual</h5><br>
-         <a href="{{ route('formPenjual',$user->id)}}" type="button" class="btn btn-outline-primary ms-1">Jual Produk</button>
-         @endif
+        
           
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -18,8 +19,11 @@ class allUserController extends Controller
    
     function profile(){
         $user = User::all()->where('id', Auth::user()->id)->first();
+        $jualan = Produk::all()->where('id', Auth::user()->id)->first();
+
+        // dd($jualan); 
         
-        return view('pembeli/profile',compact('user'));
+        return view('pembeli/profile',compact('user','jualan'));
     }
 
     function formPenjual(User $user)  {
