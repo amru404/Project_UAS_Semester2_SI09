@@ -51,7 +51,7 @@
                     @elseif(Auth::user()->role  == 'admin')
                     <button type="button" class="btn btn-outline-primary ms-1">Jual Produk</button>
                     @else
-                    <button type="button" class="btn btn-outline-primary ms-1">Menjadi Penjual</button>
+                    <a href="{{ route('formPenjual',$user->id)}}" class="btn btn-outline-primary ms-1">Menjadi Penjual</a>
                     
                     @endif
 

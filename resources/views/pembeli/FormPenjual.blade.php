@@ -61,7 +61,9 @@
                                     <label for="provinsi" class="col-4 col-form-label">provinsi</label> 
                                     <div class="col-8">
                                     <select id="provinsi" name="provinsi" class="custom-select">
-                                        <option value="rabbit">Rabbit</option>
+                                        @foreach ($provinsi as $provinsi)
+                                            <option value="{{ $provinsi }}">{{ $provinsi }}</option>
+                                        @endforeach
                                     </select>
                                     </div>
                                 </div>
@@ -69,7 +71,9 @@
                                     <label for="kabupaten" class="col-4 col-form-label">kabupaten</label> 
                                     <div class="col-8">
                                     <select id="kabupaten" name="kabupaten" class="custom-select">
-                                        <option value="rabbit">Rabbit</option>
+                                        @foreach ($kabupaten as $kabupaten)
+                                             <option value="{{ $kabupaten }}">{{ $kabupaten }}</option>
+                                        @endforeach
                                     </select>
                                     </div>
                                 </div>
@@ -77,7 +81,9 @@
                                     <label for="kecamatan" class="col-4 col-form-label">kecamatan</label> 
                                     <div class="col-8">
                                     <select id="kecamatan" name="kecamatan" class="custom-select">
-                                        <option value="rabbit">Rabbit</option>
+                                        @foreach ($kecamatan as $kecamatan)
+                                        <option value="{{ $kecamatan }}"  {{ (isset($kecamatan) || old('kecamatan'))? "selected":"" }}>{{ $kecamatan }}</option>
+                                        @endforeach
                                     </select>
                                     </div>
                                 </div>
@@ -85,18 +91,24 @@
                                     <label for="kelurahan" class="col-4 col-form-label">kelurahan</label> 
                                     <div class="col-8">
                                     <select id="kelurahan" name="kelurahan" class="custom-select">
-                                        <option value="rabbit">Rabbit</option>
+                                        @foreach ($kelurahan as $kelurahan)
+                                             <option value="{{ $kelurahan }}">{{ $kelurahan }}</option>
+                                        @endforeach
                                     </select>
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
-                                    <label for="kodepos" class="col-4 col-form-label">Kode Pos</label> 
+                                    <label for="kodepos" class="col-4 col-form-label">kodepos</label> 
                                     <div class="col-8">
                                     <select id="kodepos" name="kodepos" class="custom-select">
-                                        <option value="16412">16412</option>
+                                        @foreach ($kodepos as $kodepos)
+                                             <option value="{{ $kodepos }}">{{ $kodepos }}</option>
+                                        @endforeach
                                     </select>
                                     </div>
                                 </div>
+                              
                                 <div class="form-group row">
                                     <label for="detail_alamat" class="col-4 col-form-label">Detail Alamat</label> 
                                     <div class="col-8">
