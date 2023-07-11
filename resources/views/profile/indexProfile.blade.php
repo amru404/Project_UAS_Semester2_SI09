@@ -62,30 +62,45 @@
               <div class="card mb-4 mb-lg-0">
                 <div class="card-body p-0">
                   <ul class="list-group list-group-flush rounded-3">
-                      <li class="list-group-item d-flex justify-content-between align-items-center p-3 active">
+                    <a href="{{ route('user.profile') }}" style="text-decoration: none">  
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile')) ? 'active' : '' }}">
                         <img src="../../../public/img/user.png" style="height: 35px;" alt="">
                        
                         <p class="mb-0">Profile</p>
                       </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                    </a>
+
+                    <a href="{{ route('user.menungguBayar') }}" style="text-decoration: none">  
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile/menungguBayar')) ? 'active' : '' }}">
                         <img src="../../../public/img/menunggu_pembayaran.png" style="height: 43px;" alt="">
                       <p class="mb-0">Menunggu dibayar</p>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                    </a>
+
+                    <a href="{{ route('user.sudahBayar') }}" style="text-decoration: none">  
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile/sudahBayar')) ? 'active' : '' }}">
                         <img src="../../../public/img/pesanan dibayar.png" style="height: 35px;" alt="">
 
                       <p class="mb-0">Pesanan Dibayar</p>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                    </a>
+
+                    <a href="{{ route('user.sudahDikrim') }}" style="text-decoration: none">  
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile/sudahDikirim')) ? 'active' : '' }}">
                         <img src="../../../public/img/sudah dikirim.png" style="height: 35px;" alt="">
 
                       <p class="mb-0">Sudah Dikirim</p>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                    </a>
+
+                    <a href="{{ route('user.pesananDibatalkan') }}" style="text-decoration: none">  
+                    <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile/pesananDibatalkan')) ? 'active' : '' }}">
                         <img src="../../../public/img/cancel.png" style="height: 35px;" alt="">
 
                       <p class="mb-0">Pesanan Dibatalkan</p>
                     </li>
+                    </a>
+
                   </ul>
                 </div>
               </div>

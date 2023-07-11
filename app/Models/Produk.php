@@ -17,9 +17,9 @@ class Produk extends Model
         return $this->hasOne(Kategori::class);
     }
 
-    public function UserID(){
-        return $this->hasOne(User::class);
-    }
+    public function userID() {
+        return $this->belongsTo(User::class);
+      }
     public function RelasiPesanan(){
     return $this->belongsTo(Pesanan::class);
     }

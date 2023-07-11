@@ -1,4 +1,4 @@
-@extends('pembeli/indexProfile')
+@extends('profile/indexProfile')
 
 @section('breadcrumb')
 Data User
@@ -53,12 +53,12 @@ Data User
           @if ( Auth::user()->role == 'penjual')
           <h5>Produk yang anda jual</h5><br>
           <div class="card">
-           @foreach ($jualan as $data)
-           
-           <p>nama : {{$data->UserID->nama  }}</p>
+            @foreach ($jualan as $data)
+              
+            <p>nama : {{$data->nama}}</p>
            <p>stok : {{$data->stok}}</p>
            <p>harga : {{$data->harga}}</p>
-           {{-- <p>terjual : {{$da}}</p> --}}
+           {{-- <p>terjual : {{$data->u}}</p> --}}
            <p>gambar : {{$data->gambar}}</p>
                <hr>
            @endforeach

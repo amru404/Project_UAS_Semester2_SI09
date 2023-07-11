@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\tbl_kodepos;
+use Illuminate\Support\Facades\DB;
 
 class allUserController extends Controller
 {
@@ -19,13 +20,38 @@ class allUserController extends Controller
    
     function profile(){
         $user = User::all()->where('id', Auth::user()->id)->first();
-        $jualan = Produk::all()->where('id', Auth::user()->id)->first();
+        $jualan = DB::table('produks')->where('user_id','=', Auth::user()->id)->get();
 
-        // dd($jualan); 
-        
-        return view('pembeli/profile',compact('user','jualan'));
+        return view('profile/profile',compact('user','jualan'));
     }
 
+    function menungguBayar() {
+        $user = User::all()->where('id', Auth::user()->id)->first();
+        $barang = DB::table('pesanans')->where('user_id','=', Auth::user()->id)->where('status','=','menunggu')->get();
+
+        return view('profile/menungguPembayaran',compact('user','barang'));
+    }
+
+    function sudahBayar() {
+        $user = User::all()->where('id', Auth::user()->id)->first();
+        $barang = DB::table('pesanans')->where('user_id','=', Auth::user()->id)->where('status','=','sudah dibayar')->get();
+
+        return view('profile/pesananDibayar',compact('user','barang'));
+    }
+
+    function sudahDikirim() {
+        $user = User::all()->where('id', Auth::user()->id)->first();
+        $barang = DB::table('pesanans')->where('user_id','=', Auth::user()->id)->where('status','=','selesai')->get();
+
+        return view('profile/sudahDikirim',compact('user','barang'));
+    }
+
+    function pesananDibatalkan() {
+        $user = User::all()->where('id', Auth::user()->id)->first();
+        $barang = DB::table('pesanans')->where('user_id','=', Auth::user()->id)->where('status','=','batal')->get();
+
+        return view('profile/pesananDibatalkan',compact('user','barang'));
+    }
     function formPenjual(User $user)  {
         
         $provinsi = tbl_kodepos::pluck('provinsi')->toArray();
