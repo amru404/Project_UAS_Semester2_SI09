@@ -178,16 +178,15 @@
 					<div class="col-lg-6 text-center">
 						<div class="section-title">
 							<h1>Latest Products</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore
-								magna aliqua.</p>
+							<p>This ethalase contains a variety of our latest collections</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<!-- single product -->
 					<div class="col-lg-3 col-md-6">
-						<div class="card single-product p-1">
+						<a href="/detail">
+							<div class="card single-product p-1">
 							<img class="img-fluid" src="/assetuser/img/product/p1.jpg" alt="">
 							<div class="product-details ml-1">
 								<h6>addidas New Hammer sole
@@ -204,8 +203,10 @@
 									</a>
 								</div>
 							</div>
-						</div>
+							</div>
+						</a>
 					</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -216,15 +217,14 @@
 					<div class="col-lg-6 text-center">
 						<div class="section-title">
 							<h1>Coming Products</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-								dolore
-								magna aliqua.</p>
+							<p>always look forward to our latest collection</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<!-- single product -->
 					<div class="col-lg-3 col-md-6">
+						<a href="">
 						<div class="card single-product p-1">
 							<img class="img-fluid" src="/assetuser/img/product/p6.jpg" alt="">
 							<div class="product-details ml-1">
@@ -235,7 +235,6 @@
 									<h6 class="l-through">$210.00</h6>
 								</div>
 								<div class="prd-bottom">
-
 									<a href="" class="social-info">
 										<span class="ti-bag"></span>
 										<p class="hover-text">add to bag</p>
@@ -243,6 +242,7 @@
 								</div>
 							</div>
 						</div>
+						</a>
 					</div>
 				</div>
 			</div>

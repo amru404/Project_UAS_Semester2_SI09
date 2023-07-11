@@ -154,5 +154,8 @@ class allUserController extends Controller
     function cart(){
         return view('pembeli/cart');
     }
+    function kontak(){
+        return view('pembeli/kontak');
+    }
 
 }

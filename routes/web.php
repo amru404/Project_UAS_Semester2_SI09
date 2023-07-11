@@ -71,5 +71,6 @@ route::get('/cart',[allUserController::class,'cart'])->name('cart');
 
 route::get('/index', [allUserController::class,'index']);
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');
 route::get('/index',[allUserController::class,'index']);
 route::get('/index',[allUserController::class,'index']);
