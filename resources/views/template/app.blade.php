@@ -30,6 +30,9 @@
 	<link rel="stylesheet" href="{{ asset('assetuser/css/ion.rangeSlider.skinFlat.css') }}" />
 	<link rel="stylesheet" href="{{ asset('assetuser/css/magnific-popup.css') }}">
 	<link rel="stylesheet" href="{{ asset('assetuser/css/main.css') }}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
 </head>
 
 <body>
@@ -61,11 +64,11 @@
 						<ul class="nav navbar-nav navbar-right">
 
 							
-							<li class="nav-item"><a href="{{ route('cart') }}" class="cart"><span class="ti-bag"></span></a></li>
+							<li class="nav-item"><a href="{{ route('cart') }}" class="cart"><span class="bi bi-cart3"></span></a></li>
 							<li class="nav-item">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
 							</li>
-							<li class="nav-item"><a href="{{ route('cart') }}" class="cart"><span class="ti-user"></span></a></li>
+							<li class="nav-item submenu dropdown"><a href="{{ route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a></li>
 						</ul>
 					</div>
 				</div>
