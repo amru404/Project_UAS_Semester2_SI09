@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produk;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\tbl_kodepos;
 
 class allUserController extends Controller
 {
@@ -14,14 +16,33 @@ class allUserController extends Controller
     $this->middleware('auth');
     
 }
-    
+   
     function profile(){
         $user = User::all()->where('id', Auth::user()->id)->first();
-        return view('pembeli/profile',compact('user'));
+        $jualan = Produk::all()->where('id', Auth::user()->id)->first();
+
+        // dd($jualan); 
+        
+        return view('pembeli/profile',compact('user','jualan'));
     }
 
     function formPenjual(User $user)  {
-        return view('pembeli.formPenjual', compact('user'));
+        
+        $provinsi = tbl_kodepos::pluck('provinsi')->toArray();
+        $provinsi = array_unique($provinsi);
+        
+        $kabupaten = tbl_kodepos::pluck('kabupaten')->toArray();
+        $kabupaten = array_unique($kabupaten);
+        
+        $kecamatan = tbl_kodepos::pluck('kecamatan')->toArray();
+        $kecamatan = array_unique($kecamatan);
+        
+        $kelurahan = tbl_kodepos::pluck('kelurahan')->toArray();
+        $kelurahan = array_unique($kelurahan);
+        
+        $kodepos = tbl_kodepos::pluck('kodepos')->toArray();
+        $kodepos = array_unique($kodepos);
+        return view('pembeli.formPenjual', compact('user','provinsi','kabupaten','kecamatan','kelurahan','kodepos'));
     }
 
     function addPenjual(Request $request, User $user){
@@ -133,6 +154,8 @@ class allUserController extends Controller
     function cart(){
         return view('pembeli/cart');
     }
-
+    function kontak(){
+        return view('pembeli/kontak');
+    }
 
 }

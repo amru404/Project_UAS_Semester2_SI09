@@ -1,7 +1,5 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -101,6 +99,7 @@
                         <input type="hidden" name="kecamatan" value="-">
                         <input type="hidden" name="kelurahan" value="-">
                         <input type="hidden" name="kodepos" value="0">
+                        <input type="hidden" name="no_hp" value="0">
                         <input type="hidden" name="img_ktp" value="-">
                         <input type="hidden" name="img_ktp_selfi" value="-">
                         <input type="hidden" name="detail_alamat" value="-">
@@ -148,5 +147,9 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</div> --}}
+
+<html>
+
+    <h1 style="text-align: center">Not Found</h1>
+</html>

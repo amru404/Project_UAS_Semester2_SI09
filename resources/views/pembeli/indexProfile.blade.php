@@ -46,13 +46,15 @@
                   <p class="text-muted mb-1">{{ Auth::user()->role }}</p>
                   <p class="text-muted mb-4">{{ Auth::user()->provinsi }}, {{ Auth::user()->kabupaten }}</p>
                   <div class="d-flex justify-content-center mb-2">
-                    @if (  Auth::user()->role  == 'penjual' || 'admin')
+                    @if (  Auth::user()->role  == 'penjual')
                     <button type="button" class="btn btn-outline-primary ms-1">Jual Produk</button>
+                    @elseif(Auth::user()->role  == 'admin')
+                    <button type="button" class="btn btn-outline-primary ms-1">Jual Produk</button>
+                    @else
+                    <a href="{{ route('formPenjual',$user->id)}}" class="btn btn-outline-primary ms-1">Menjadi Penjual</a>
+                    
                     @endif
 
-                    @if ( Auth::user()->role == 'pembeli')
-                    <button type="button" class="btn btn-outline-primary ms-1">Menjadi Penjual</button>
-                    @endif
 
                   </div>
                 </div>

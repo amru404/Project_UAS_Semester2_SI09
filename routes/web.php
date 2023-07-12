@@ -4,7 +4,7 @@ use App\Http\Controllers\adminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\allUserController;
  
@@ -20,7 +20,7 @@ use App\Http\Controllers\allUserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 
@@ -53,8 +53,6 @@ Route::prefix('dashboard')->group(function(){
         [DashboardController::class,'addproduct']) ->name("product.add");
         
 });
-
-route::get('profile',[allUserController::class,'profile'])->name('profile')->middleware('role');
 route::get('user/profile',[allUserController::class,'profile'])->name('user.profile');
 
 Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
@@ -77,6 +75,6 @@ route::get('/cart',[allUserController::class,'cart'])->name('cart');
 
 route::get('/index', [allUserController::class,'index']);
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');
 route::get('/index',[allUserController::class,'index']);
 route::get('/index',[allUserController::class,'index']);
-
