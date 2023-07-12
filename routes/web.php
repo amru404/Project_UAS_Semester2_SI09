@@ -7,7 +7,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\allUserController;
- 
+use App\Http\Controllers\PenjualController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +60,10 @@ Route::prefix('dashboard')->group(function(){
         
         Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
         Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
+
+        Route::get('/addProduk}', [PenjualController::class, 'create'])->name('profile.create.produk');
+        Route::post('/storeProduk}', [PenjualController::class, 'store'])->name('profile.store.produk');
+
 
     });
 

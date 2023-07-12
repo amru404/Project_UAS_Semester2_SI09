@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\tbl_kodepos;
 use Illuminate\Support\Facades\DB;
+use App\Models\Pesanan;
 
 class allUserController extends Controller
 {

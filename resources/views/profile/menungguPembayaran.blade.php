@@ -1,17 +1,25 @@
 @extends('profile/indexProfile')
 
 @section('breadcrumb')
-Menunggu Pembayaran
+Belum Dibayar
 @endsection
 
 @section('content')
-    <h2>nama</h2>
-    <div class="row">
-        <div class="col-md-12">
-            @foreach ($barang as $item)
-                <p>Nama :{{$item->kode}}</p>
-            @endforeach
+<div class="col-lg-8">
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5>Belum Dibayar</h5><br>
+
+        {{-- {{$barang->Produk->nama}} --}}
+
+        @foreach ($barang as $item)
+            <p>Nama :{{$item->kode}}</p>
+            <p>Nama : {{$item->status}}</p>
+            <p>Nama : {{$item->Produk->nama}}</p>
+        @endforeach
         </div>
+      </div>
     </div>
+    
 
 @endsection
