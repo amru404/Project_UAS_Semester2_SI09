@@ -33,7 +33,7 @@ route::get('daerah',[adminController::class,'cekkota'])->name('daerah');
 
 Route::prefix('dashboard')->group(function(){
 
-    Route::get('/category',
+    Route::get('/',
         [DashboardController::class,'index'])-> name('category'); 
         
     Route::get('/category/add',
@@ -47,7 +47,11 @@ Route::prefix('dashboard')->group(function(){
         [DashboardController::class,'update'])->name('category.update');
     Route::delete('category/{item}',
         [DashboardController::class,'delete'])->name('category.destroy');
-
+    Route::get('/product',
+        [DashboardController::class,'product'])->name('Product');
+    Route::get('/product/add',
+        [DashboardController::class,'addproduct']) ->name("product.add");
+        
 });
 
 route::get('profile',[allUserController::class,'profile'])->name('profile')->middleware('role');

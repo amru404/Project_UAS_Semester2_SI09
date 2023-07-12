@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategoris;
+use App\Models\Produk;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -34,18 +36,28 @@ class DashboardController extends Controller
         return redirect()->route('category')->with('Succes','Delete Successfully');
     }
 
+    public function update(Request $request, $id)
+{
+    $kategoris = Kategoris::find($id);
+    $kategoris->name = $request->input('name');
+    date_default_timezone_set('Asia/Jakarta');
+//if (empty ($request -> input('created_at')))
+    $kategoris->updated_at = Carbon::now();
+    $kategoris->save();
+    $kategoris->update();
     
-    public function update(Request $request, Kategoris $item){
-       // dd($item);
-        $request->validate([
-            'name' => 'required',
-         
-
-        ]);
-        $item->update(['name'=> $request->name]);
-
-        return redirect()->route('category')->with('success', 'Product updated Successfully');
+        return redirect()->route('category')->with('success', 'Kategori berhasil diupdate.');
     }
 
+    public function product(){
+        $produk=Produk::all();
+        return view('/dashboards/Product/index',compact('produk'));
+    }
+    
+    public function addproduct(){
+        $kategoris= Kategoris::all();
+        // dd('$kategoris');
+        return view('dashboards/product/add', compact('kategoris'));
+    }
 }
 

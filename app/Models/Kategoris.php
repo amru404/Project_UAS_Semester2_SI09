@@ -10,7 +10,7 @@ class Kategoris extends Model
 {
     use HasFactory;
 	public $timestamps = false;
-    protected $fillable = ['name'];
+    protected $fillable = ['id','name'];
 
     public function RelasiProduk(){
     return $this->belongsTo(Produk::class);
