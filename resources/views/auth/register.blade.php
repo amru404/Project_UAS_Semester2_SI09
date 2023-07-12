@@ -106,6 +106,8 @@
                         <input type="hidden" name="role" value="pembeli">
                         <input type="hidden" name="status" value="-">
 
+
+
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password')
                                 }}</label>

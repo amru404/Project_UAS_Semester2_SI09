@@ -85,3 +85,5 @@ route::get('/cart',[allUserController::class,'cart'])->name('cart');
 
 
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');
