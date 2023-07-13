@@ -77,12 +77,25 @@
                         </li>
 
                         @else
+						
+
                         <li class="nav-item submenu dropdown">
                             <a
                                 href="{{ route('user.profile') }}"
                                 class="profile"
                             >
-                                <span class="bi bi-person-circle"></span>
+                                <span class="bi bi-person-circle" ></span>
+                            </a>
+                        </li>
+
+						<li class="nav-item submenu dropdown">
+                            <a
+                                href="{{ route('category') }}"
+                                class="profile"
+                            >
+                                <button class="btn btn-warning mt-4">
+                                    Admin
+                                </button>
                             </a>
                         </li>
                         @endguest
