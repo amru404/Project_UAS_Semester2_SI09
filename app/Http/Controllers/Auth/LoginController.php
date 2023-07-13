@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/pembeli';
    
     /**
      * Create a new controller instance.
@@ -53,7 +53,7 @@ class LoginController extends Controller
             if (auth()->user()->role == 'admin') {
                 return redirect()->route('admin.home');
             }else{
-                return redirect()->route('home');
+                return redirect()->route('index');
             }
         }else{
             return redirect()->route('login')
