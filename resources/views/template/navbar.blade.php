@@ -13,22 +13,21 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="/pembeli">Home</a></li>
-							<li class="nav-item submenu"><a class="nav-link" href="{{ route('kategori') }}">Category</a></li>
-							<li class="nav-item submenu"><a class="nav-link" href="{{ route('kontak') }}">Contact</a></li>
-							
-							
-							
-							
+							<li class="nav-item {{ (request()->is('pembeli')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('index') }}">Home</a></li>
+							<li class="nav-item {{ (request()->is('kategori')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('kategori') }}">Category</a></li>
+							<li class="nav-item {{ (request()->is('kontak')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('kontak') }}">Contact</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-
-							
 							<li class="nav-item"><a href="{{ route('cart') }}" class="cart"><span class="bi bi-cart3"></span></a></li>
 							<li class="nav-item">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
 							</li>
-							<li class="nav-item submenu dropdown"><a href="{{ route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a></li>
+							<li class="nav-item submenu dropdown"><a href="{{ route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a>
+                                <ul class="dropdown">
+                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+								    <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>    
+                                </ul>
+                            </li>
 						</ul>
 					</div>
 				</div>

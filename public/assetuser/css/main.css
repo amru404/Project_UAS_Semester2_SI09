@@ -1069,9 +1069,9 @@ h1, h2, h3, h4, h5, h6 {
           @media (min-width: 992px) {
             .header_area .navbar .nav .nav-item.submenu ul {
               position: absolute;
-              top: 140%;
+              top: 100%;
               left: 0px;
-              min-width: 200px;
+              min-width: 150px;
               text-align: left;
               opacity: 0;
               -webkit-transition: visibility 0.5s ease;
