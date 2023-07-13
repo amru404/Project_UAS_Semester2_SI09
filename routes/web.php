@@ -60,21 +60,14 @@ Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->n
 
 
 
-route::get('/index',[allUserController::class,'index']);
 
-route::get('/index',
-    [allUserController::class,'index']);
-
-route::get('/index',[allUserController::class,'index']);
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
-route::get('/pembeli',[allUserController::class,'index']);
+route::get('/pembeli',[allUserController::class,'index'])->name('index');
 route::get('/detail',[allUserController::class,'detail'])->name('detail');
 route::get('/checkout',[allUserController::class,'checkout'])->name('checkout');
 route::get('/cart',[allUserController::class,'cart'])->name('cart');
 
 
-route::get('/index', [allUserController::class,'index']);
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
 route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');
-route::get('/index',[allUserController::class,'index']);
-route::get('/index',[allUserController::class,'index']);
+
