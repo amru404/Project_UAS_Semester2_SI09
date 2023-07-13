@@ -24,22 +24,55 @@
 							</li>
 							<li class="nav-item submenu dropdown"><a href="{{ route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a>
                                 <ul class="dropdown">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">login</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
 								    <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>    
                                 </ul>
-                            </li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-		<div class="search_input" id="search_input_box">
-			<div class="container">
-				<form class="d-flex justify-content-between">
-					<input type="text" class="form-control" id="search_input" placeholder="Search Here">
-					<button type="submit" class="btn"></button>
-					<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-				</form>
-			</div>
-		</div>
-	</header>
+                            </li> -->
+                        <!-- <li class="nav-item submenu dropdown">
+                            <a
+                                href="{{ route('user.profile') }}"
+                                class="profile"
+                            >
+                                <span class="bi bi-person-circle"></span>
+                            </a>
+                            @guest
+                            <ul class="dropdown" style="left: -122px">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link"
+                                        href="{{ route('login') }}"
+                                        >Login</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="single-blog.html"
+                                        >Profile</a
+                                    >
+                                </li>
+                            </ul>
+                            @endguest
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="search_input" id="search_input_box">
+        <div class="container">
+            <form class="d-flex justify-content-between">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="search_input"
+                    placeholder="Search Here"
+                />
+                <button type="submit" class="btn"></button>
+                <span
+                    class="lnr lnr-cross"
+                    id="close_search"
+                    title="Close Search"
+                ></span>
+            </form>
+        </div>
+    </div>
+</header>
