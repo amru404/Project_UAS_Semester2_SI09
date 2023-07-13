@@ -1,3 +1,5 @@
+
+
 <header class="header_area sticky-header">
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light main_box">
@@ -16,14 +18,9 @@
 							<li class="nav-item active"><a class="nav-link" href="/pembeli">Home</a></li>
 							<li class="nav-item submenu"><a class="nav-link" href="{{ route('kategori') }}">Category</a></li>
 							<li class="nav-item submenu"><a class="nav-link" href="{{ route('kontak') }}">Contact</a></li>
-							
-							
-							
-							
+														
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-
-							
 							<li class="nav-item"><a href="{{ route('cart') }}" class="cart"><span class="bi bi-cart3"></span></a></li>
 							<li class="nav-item">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
