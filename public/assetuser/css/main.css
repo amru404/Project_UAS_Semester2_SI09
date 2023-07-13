@@ -1088,7 +1088,7 @@ h1, h2, h3, h4, h5, h6 {
             border-width: 10px 10px 0 10px;
             border-color: #eeeeee transparent transparent transparent;
             position: absolute;
-            right: 24px;
+            right: 1px;
             top: 45px;
             z-index: 3;
             opacity: 0;
@@ -1142,7 +1142,7 @@ h1, h2, h3, h4, h5, h6 {
         .header_area .navbar .nav.navbar-nav.navbar-right li {
           margin-left: 0px; } }
       .header_area .navbar .nav.navbar-nav.navbar-right li:first-child {
-        margin-left: 35px; }
+        margin-left: 0px; }
         @media (max-width: 991px) {
           .header_area .navbar .nav.navbar-nav.navbar-right li:first-child {
             display: none; } }

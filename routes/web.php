@@ -21,7 +21,7 @@ use App\Http\Controllers\PenjualController;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('pembeli/index');
 });
 
 
