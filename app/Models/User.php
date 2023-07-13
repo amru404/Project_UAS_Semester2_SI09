@@ -62,5 +62,10 @@ class User extends Authenticatable
     public function RelasiPesanan2(){
         return $this->belongsTo(Pesanan::class);
     }
+
+    public function produk() {
+        return $this->hasMany(Produk::class);
+      }
+
     
 }
