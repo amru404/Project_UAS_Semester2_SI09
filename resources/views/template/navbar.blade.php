@@ -24,7 +24,7 @@
 							</li>
 							<li class="nav-item submenu dropdown"><a href="{{ route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a>
                                 <ul class="dropdown">
-                                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="blog.html">login</a></li>
 								    <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>    
                                 </ul>
                             </li>
