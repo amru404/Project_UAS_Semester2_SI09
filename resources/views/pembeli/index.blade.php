@@ -185,7 +185,7 @@
 				<div class="row">
 					<!-- single product -->
 					<div class="col-lg-3 col-md-6">
-						<a href="/detail">
+						<a href="/detail" class="text-dark text-decoration-none">
 							<div class="card single-product p-1">
 							<img class="img-fluid" src="/assetuser/img/product/p1.jpg" alt="">
 							<div class="product-details ml-1">
@@ -224,7 +224,7 @@
 				<div class="row">
 					<!-- single product -->
 					<div class="col-lg-3 col-md-6">
-						<a href="">
+						<a href="/detail" class="text-dark text-decoration-none">
 						<div class="card single-product p-1">
 							<img class="img-fluid" src="/assetuser/img/product/p6.jpg" alt="">
 							<div class="product-details ml-1">

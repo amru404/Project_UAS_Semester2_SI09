@@ -10,7 +10,7 @@
             @method('put')
        <div class="form-group">
         <label for="input-6">Name</label>
-        <input type="text" class="form-control form-control-rounded" id="name" value="{{ $item->name }}">
+        <input type="text" class="form-control form-control-rounded" id="name" value="{{ $item->name }}" name="name">
        </div>
        {{-- <div class="form-group py-2">
          <div class="icheck-material-white">
