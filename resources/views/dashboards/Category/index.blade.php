@@ -4,7 +4,7 @@
   <div class="card rounded-lg">
     <div class="card-body">
       <h5 class="card-title">Product </h5>
-      <a href="{{ route('addCategory') }}" class= "btn btn-transparent btn-outline-info shadow mb-3 text-white" >Add Produk</a>
+      <a href="{{ route('addCategory') }}" class="btn btn-transparent btn-outline-info shadow mb-3 text-white" >Add Produk</a>
 <div class="table-responsive">
       <table class="table table-hover">
         <thead>

@@ -190,9 +190,13 @@ class allUserController extends Controller
             }
         }
     }
-    function index(){
-        return view('pembeli/index');
+    public function index()
+    {
+        $products = Produk::all(); // Mengambil semua data produk dari tabel
+    
+        return view('pembeli/index', compact('products'));
     }
+    
 
     function kategori(){
         return view('pembeli/kategori');

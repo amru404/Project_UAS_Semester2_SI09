@@ -21,7 +21,7 @@ use App\Http\Controllers\PenjualController;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('pembeli/index');
 });
 
 
@@ -44,14 +44,24 @@ Route::prefix('dashboard')->group(function(){
         [DashboardController::class,"store"])->name('category.store');
     Route::get('/category/{item}/edit',
         [DashboardController::class,'edit'])->name('category.edit');
-    Route::put('category/{item}',
+    Route::put('/category/{item}',
         [DashboardController::class,'update'])->name('category.update');
-    Route::delete('category/{item}',
+    Route::delete('/category/{item}',
         [DashboardController::class,'delete'])->name('category.destroy');
     Route::get('/product',
-        [DashboardController::class,'product'])->name('Product');
+        [DashboardController::class,'product'])->name('product');
     Route::get('/product/add',
         [DashboardController::class,'addproduct']) ->name("product.add");
+    Route::post('/product',
+        [DashboardController::class,'storeProduct'])->name('product.store');  
+    Route::get('product/{produk}/edit',
+        [DashboardController::class,"editProduct"])->name('product.edit');
+    Route::put('/product/{produk}',
+        [DashboardController::class,'updateProduct'])->name('product.update');
+    Route::delete('/product/{produk}',
+        [DashboardController::class,'deleteProduct'])->name('product.destroy');
+    Route::get('/order',
+        [DashboardController::class,'order'])->name('orders');  
         
 });
 
