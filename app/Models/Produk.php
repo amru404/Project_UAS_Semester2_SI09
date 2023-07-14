@@ -20,5 +20,7 @@ class Produk extends Model
     public function userID() {
         return $this->belongsTo(User::class);
       }
+
+   
    
 }

@@ -184,16 +184,15 @@
 				</div>
 				<div class="row">
 					<!-- single product -->
+					@foreach ($products as $product)
 					<div class="col-lg-3 col-md-6">
 						<a href="/detail" class="text-dark text-decoration-none">
 							<div class="card single-product p-1">
-							<img class="img-fluid" src="/assetuser/img/product/p1.jpg" alt="">
+							<img class="img-fluid" src="{{ asset('img_produk/'.$product->gambar) }}" alt="">
 							<div class="product-details ml-1">
-								<h6>addidas New Hammer sole
-									for Sports person</h6>
+								<h6>{{ $product->nama }}</h6>
 								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
+									<h6>{{ number_format($product->harga) }}</h6>
 								</div>
 								<div class="prd-bottom">
 
@@ -206,6 +205,7 @@
 							</div>
 						</a>
 					</div>
+					@endforeach
 					</a>
 				</div>
 			</div>
@@ -224,7 +224,7 @@
 				<div class="row">
 					<!-- single product -->
 					<div class="col-lg-3 col-md-6">
-						<a href="/detail" class="text-dark text-decoration-none">
+						<a href="{{route ('detail')}}" class="text-dark text-decoration-none">
 						<div class="card single-product p-1">
 							<img class="img-fluid" src="/assetuser/img/product/p6.jpg" alt="">
 							<div class="product-details ml-1">
