@@ -214,6 +214,10 @@
 		<!-- single product slide -->
 	</section>
 	<!-- end product Area -->
+	<!-- end product Area -->
+	<!-- end product Area -->
+	<!-- end product Area -->
+	<!-- end product Area -->
 
     @endsection
 
