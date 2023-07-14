@@ -10,6 +10,7 @@ use App\Models\User;
 class Pesanan extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $fillable = ['kode','qty','wktu_pesan','status','produk_id','user_id',];
 
     public function Produk(){

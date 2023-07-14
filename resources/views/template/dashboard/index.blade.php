@@ -46,51 +46,34 @@
    <ul class="sidebar-menu do-nicescrol">
       <li class="sidebar-header">MAIN NAVIGATION</li>
       <li>
-        <a href="#">
+        <a href="{{ route('product')}}">
           <i class="zmdi zmdi-case-check"></i> <span>Product</span>
         </a>
       </li>
 
       <li>
-        <a href="#">
+        <a href="{{route('category')}}">
           <i class="zmdi zmdi-format-list-bulleted"></i> <span>Category-Product</span>
         </a>
       </li>
 
       <li>
-        <a href="#">
-          <i class="zmdi zmdi-accounts-list"></i> <span>Buyers</span>
+        <a href="{{-- route('order')--}}">
+          <i class="zmdi zmdi-assignment"></i> <span>Order</span>
         </a>
+      </li>
       </li>
 
       <li>
-        <a href="#">
-          <i class="zmdi zmdi-accounts-list"></i> <span>Sellers</span>
+        <a href="{{-- route('user')--}}">
+          <i class="zmdi zmdi-face"></i> <span>User</span>
         </a>
       </li>
 
-      <li>
-        <a href="#">
-          <i class="zmdi zmdi-face"></i> <span>Profile</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="#" target="_blank">
-          <i class="zmdi zmdi-lock"></i> <span>Login</span>
-        </a>
-      </li>
-
-       <li>
-        <a href="#" target="_blank">
-          <i class="zmdi zmdi-account-circle"></i> <span>Registration</span>
-        </a>
-      </li>
-
-      {{-- <li class="sidebar-header">LABELS</li>
+      <li class="sidebar-header">LABELS</li>
       <li><a href="javaScript:void();"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a></li>
       <li><a href="javaScript:void();"><i class="zmdi zmdi-chart-donut text-success"></i> <span>Warning</span></a></li>
-      <li><a href="javaScript:void();"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li> --}}
+      <li><a href="javaScript:void();"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li>
 
     </ul>
    
@@ -159,13 +142,16 @@
 
 
         <section class="content">
-            <div class="clearfix"></div>
-	
+          
+
+            
             <div class="content-wrapper">
               <div class="container-fluid">
                 @yield('content')
+              </div>
+            
             </div>
-
+              
 
         </section>
 <!--start overlay-->
@@ -182,11 +168,10 @@
 
 <!--Start footer-->
 <footer class="footer">
-<div class="container">
 <div class="text-center">
   Copyright © 2023 Alpa
 </div>
-</div>
+
 </footer>
 <!--End footer-->
 
