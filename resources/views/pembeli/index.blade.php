@@ -1,3 +1,4 @@
+
 @extends ('template/app')
 
 @section ('content')
@@ -215,3 +216,4 @@
 	<!-- end product Area -->
 
     @endsection
+
