@@ -177,7 +177,7 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-6 text-center">
 						<div class="section-title">
-							<h1>Latest Products</h1>
+							<h1>New Arrival</h1>
 							<p>This ethalase contains a variety of our latest collections</p>
 						</div>
 					</div>
@@ -211,42 +211,6 @@
 			</div>
 		</div>
 		<!-- single product slide -->
-		<div class="single-product-slider">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-6 text-center">
-						<div class="section-title">
-							<h1>Coming Products</h1>
-							<p>always look forward to our latest collection</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<!-- single product -->
-					<div class="col-lg-3 col-md-6">
-						<a href="{{route ('detail')}}" class="text-dark text-decoration-none">
-						<div class="card single-product p-1">
-							<img class="img-fluid" src="/assetuser/img/product/p6.jpg" alt="">
-							<div class="product-details ml-1">
-								<h6>addidas New Hammer sole
-									for Sports person</h6>
-								<div class="price">
-									<h6>$150.00</h6>
-									<h6 class="l-through">$210.00</h6>
-								</div>
-								<div class="prd-bottom">
-									<a href="" class="social-info">
-										<span class="ti-bag"></span>
-										<p class="hover-text">add to bag</p>
-									</a>
-								</div>
-							</div>
-						</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
 	</section>
 	<!-- end product Area -->
 
