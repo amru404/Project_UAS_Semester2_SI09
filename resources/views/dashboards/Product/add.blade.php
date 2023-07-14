@@ -1,17 +1,27 @@
 @extends('template/dashboard/index')
 @section('content')
-<h2>FORM INPUT PRODUK</h2>
 
-<form action="{{-- route('produk.store') --}}" method="POST">
+<div class="col">
+    <div class="card-rounded-lg">
+    <div class="card-body">
+        <h2>FORM INPUT PRODUK</h2>
+
+<form action="{{ route('product.store') }}" method="POST">
     @csrf
+
     <div class = "form-group">
-        <label for="name">Nama Produk</label>
-        <input type="text" name="name" id="name" value="" class="form-control">
+        <label for="kode">Kode Produk</label>
+        <input type="text" name="kode" id="kode" value="" class="form-control">
     </div>
 
     <div class = "form-group">
-        <label for="price">Harga Produk</label>
-        <input type="number" name="price" id="harga" value="" class="form-control">
+        <label for="nama">Nama Produk</label>
+        <input type="text" name="nama" id="nama" value="" class="form-control">
+    </div>
+
+    <div class = "form-group">
+        <label for="harga">Harga Produk</label>
+        <input type="number" name="harga" id="harga" value="" class="form-control">
     </div>
 
     <div class = "form-group">
@@ -25,8 +35,8 @@
     </div>
 
     <div class = "form-group">
-        <label for="description">Deskripsi Produk</label>
-        <input type="text" name="description" id="description" value="" class="form-control">
+        <label for="deskripsi_produk">Deskripsi Produk</label>
+        <input type="text" name="deskripsi_produk" id="deskripsi_produk" value="" class="form-control">
     </div>
 
 
@@ -34,18 +44,25 @@
         <div class="col-md-8">
         <label for="kategori_id">Kategori Id</label>
         </div>
-        <div class="col-md">
+        <div class="col-md"> 
+            
             <select class="form-select"  for ="Kategori_id" name='kategori_id' id='kategori_id'>
                 @foreach ($kategoris as $kategori)
-        <option value="{{ $kategori->id }}">
-            {{ $kategori->id }} - {{ $kategori->nama }}
-        </option>
-    @endforeach
-           </select>
+                <option value="{{ $kategori->id }}">
+                    {{ $kategori->id }} - {{ $kategori->nama }}
+                </option>
+                @endforeach
+            </select>
         </div>
-    </div>
+</div>
+
+    
+    
 
     <button type="submit" class="btn btn-success">Add</button>
-</form>
-
+ </form>
+        
+    </div>    
+    </div>    
+</div>    
 @endsection

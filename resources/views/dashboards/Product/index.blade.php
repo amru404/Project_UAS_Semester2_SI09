@@ -4,7 +4,7 @@
     <div class="card rounded-lg">
       <div class="card-body">
         <h5 class="card-title">Product </h5>
-        <a href="{{-- route('addCategory') --}}" class= "btn btn-transparent btn-outline-info shadow mb-3 text-white" >Add Produk</a>
+        <a href="{{ route('product.add') }}" class= "btn btn-transparent btn-outline-info shadow mb-3 text-white" >Add Produk</a>
   <div class="table-responsive">
         <table class="table table-hover">
           <thead>
@@ -33,8 +33,8 @@
               <td>{{ $item->min_stok }}</td>
               <td>{{ $item->deskripsi_produk }}</td>
               <td>{{ $item->kategori_id }}</td>
-              <td> <a href="{{-- route('category.edit', $item) --}}" class="btn btn-transparent btn-outline-warning shadow mb-3 text-white">Edit</a>
-                <form action="{{-- route('category.destroy', $item) --}}" method="POST" style="display: inline">
+              <td> <a href="{{ route('product.edit', $item) }}" class="btn btn-transparent btn-outline-warning shadow mb-3 text-white">Edit</a>
+                <form action="{{ route('product.destroy', $item) }}" method="POST" style="display: inline">
                     @csrf
                     @method('DELETE')
                     <button type="submit" onclick="return confirm('Delete this Product?')" class="btn btn-transparent btn-outline-danger shadow mb-3 text-white">Delete</button>
