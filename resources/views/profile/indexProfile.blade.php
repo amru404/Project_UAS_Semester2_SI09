@@ -1,4 +1,4 @@
-{{-- @extends('template/app') --}}
+
 
 
 <!doctype html>
@@ -9,6 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assetuser/css/linearicons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetuser/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetuser/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetuser/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetuser/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetuser/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetuser/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetuser/css/ion.rangeSlider.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assetuser/css/ion.rangeSlider.skinFlat.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assetuser/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetuser/css/main.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
@@ -59,6 +72,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    @extends('template/navbar')
     <section>
         <div class="container py-5">
           <div class="row">
@@ -90,9 +104,9 @@
                 background-color: #ffeba7;
                 color: #102770;
                 box-shadow: 0 8px 24px 0 rgba(255,235,167,.2)">
-                  <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">User Profile</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">@yield('breadcrumb')</li>
+                    {{-- <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">User Profile</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@yield('breadcrumb')</li> --}}
                 </ol>
               </nav>
             </div>
@@ -175,7 +189,7 @@
                   <ul class="list-group list-group-flush rounded-3">
                     <a href="{{ route('user.profile') }}" style="text-decoration: none;">  
                     <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile')) ? 'active' : '' }}">
-                        <img src="../../../public/img/user.png" style="height: 35px;" alt="">
+                        <img src="{{ asset('img/user.png') }}" style="height: 35px;" alt="">
                        
                         <p class="mb-0 text-dark">Profile</p>
                       </li>
@@ -183,14 +197,14 @@
 
                     <a href="{{ route('user.menungguBayar') }}" style="text-decoration: none;">  
                     <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile/menungguBayar')) ? 'active' : '' }}">
-                        <img src="../../../public/img/menunggu_pembayaran.png" style="height: 43px;" alt="">
+                        <img src="{{ asset('img/menunggu_pembayaran.png') }}" style="height: 43px;" alt="">
                       <p class="mb-0 text-dark">Menunggu dibayar</p>
                     </li>
                     </a>
 
                     <a href="{{ route('user.sudahBayar') }}" style="text-decoration: none;">  
                     <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile/sudahBayar')) ? 'active' : '' }}">
-                        <img src="../../../public/img/pesanan dibayar.png" style="height: 35px;" alt="">
+                        <img src="{{ asset('img/pesanan dibayar.png') }}" style="height: 35px;" alt="">
 
                       <p class="mb-0 text-dark">Pesanan Dibayar</p>
                     </li>
@@ -198,7 +212,7 @@
 
                     <a href="{{ route('user.sudahDikrim') }}" style="text-decoration: none;">  
                     <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile/sudahDikirim')) ? 'active' : '' }}">
-                        <img src="../../../public/img/sudah dikirim.png" style="height: 35px;" alt="">
+                        <img src="{{ asset('img/sudah dikirim.png') }}" style="height: 35px;" alt="">
 
                       <p class="mb-0 text-dark">Sudah Dikirim</p>
                     </li>
@@ -206,7 +220,7 @@
 
                     <a href="{{ route('user.pesananDibatalkan') }}" style="text-decoration: none;">  
                     <li class="list-group-item d-flex justify-content-between align-items-center p-3 {{ (request()->is('profile/pesananDibatalkan')) ? 'active' : '' }}">
-                        <img src="../../../public/img/cancel.png" style="height: 35px;" alt="">
+                        <img src="{{ asset('img/cancel.png') }}" style="height: 35px;" alt="">
 
                       <p class="mb-0 text-dark">Pesanan Dibatalkan</p>
                     </li>
@@ -229,7 +243,21 @@
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-
+    <script src="{{ asset('assetuser/js/vendor/jquery-2.2.4.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+     crossorigin="anonymous"></script>
+    <script src="{{ asset('assetuser/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assetuser/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('assetuser/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('assetuser/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('assetuser/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assetuser/js/countdown.js') }}"></script>
+    <script src="{{ asset('assetuser/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assetuser/js/owl.carousel.min.js') }}"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="{{ asset('assetuser/js/gmaps.min.js') }}"></script>
+    <script src="{{ asset('assetuser/js/main.js') }}"></script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

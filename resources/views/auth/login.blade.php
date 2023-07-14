@@ -490,8 +490,9 @@ h6 span{
 
 <script>
     function myFunction() {
-  alert("Apaansi Goblokk!");
+  alert("test!");
+
 }
-</script>
+
 
 @endsection
