@@ -13,11 +13,7 @@ use App\Models\Pesanan;
 
 class allUserController extends Controller
 {
-    public function __construct()
-{
-    $this->middleware('auth');
-    
-}
+
    
     function profile(){
         $user = User::all()->where('id', Auth::user()->id)->first();
