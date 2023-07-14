@@ -1,9 +1,9 @@
 <header class="header_area sticky-header">
     <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light main_box">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark main_box">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="/pembeli"><img src="/assetuser/img/CEH.png" alt=""
+                <a class="navbar-brand logo_h" href="/pembeli"><img src="/assetuser/img/logo.png" alt=""
                         style="height: 55px" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -27,11 +27,11 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a href="{{ route('cart') }}" class="cart"><span class="bi bi-cart3"></span></a>
+                            <a href="{{ route('cart') }}" class="cart"><span class="bi bi-cart3 text-white"></span></a>
                         </li>
                         <li class="nav-item">
                             <button class="search">
-                                <span class="lnr lnr-magnifier" id="search"></span>
+                                <span class="lnr lnr-magnifier text-white" id="search"></span>
                             </button>
                         </li>
                         @guest
@@ -45,14 +45,14 @@
                         @else
                         <li class="nav-item submenu dropdown">
                             <a href="{{ route('user.profile') }}" class="profile">
-                                <span class="bi bi-person-circle"></span>
+                                <span class="bi bi-person-circle text-white"></span>
                             </a>
                         </li>
 
                         @if(Auth::user()->role == 'admin')
                         <li class="nav-item submenu dropdown">
                             <a href="{{ route('category') }}" class="profile">
-                                <button class="btn btn-warning mt-4">
+                                <button class="btn btn-warning mt-4 text-white">
                                     Admin
                                 </button>
                             </a>
