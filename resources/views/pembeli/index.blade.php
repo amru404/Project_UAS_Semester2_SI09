@@ -189,7 +189,7 @@
 					<div class="col-lg-3 col-md-6">
 						<a href="/detail" class="text-dark text-decoration-none">
 							<div class="card single-product p-1">
-							<img class="img-fluid" src="{{ asset('img_produk/'.$product->gambar) }}" alt="">
+							<img class="img-fluid" src="{{ asset('img_produk/'.$product->gambar) }}" style="height: 250px;" alt="">
 							<div class="product-details ml-1">
 								<h6>{{ $product->nama }}</h6>
 								<div class="price">
