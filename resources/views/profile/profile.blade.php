@@ -53,11 +53,12 @@ Data User
           @if ( Auth::user()->role == 'penjual')
           <h5>Produk yang anda jual</h5><br>
           @foreach ($jualan as $data)
-          <div class="card mb-3 p-3 text-center" style="border-radius: 20px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+          <div class="card mb-3 text-center text-white" style="background-color: #f77306;border-radius:20px">
               
             <div class="row">
-              <div class="col-12 col-sm-12 col-md-3">
-                <img src="{{ asset('img_produk/'.$data->gambar) }}" style="height: 150px; width:160px" alt="">
+              <div class="col-12 col-sm-12 col-md-3"  style="background-image:url('{{ asset('img_produk/'.$data->gambar)}}');  background-position: bottom; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; border-radius:20px">
               </div>
               <div class="col-12 col-sm-6 col-md-5">
                 <h5 class="mt-3">{{$data->nama}}</h5>
@@ -78,14 +79,9 @@ Data User
 
 
            @elseif ( Auth::user()->role == 'admin')
-           <h5>Produk yang anda jual</h5><br>
+           <h5>Anda Gaboleh Jualan</h5><br>
            <div class="card">
-            @foreach ($produkJualan as $data)
-  
-            <p>{{$data['nama']}}</p>
-                
-            @endforeach
- 
+          
 
            @else 
 

@@ -36,7 +36,7 @@
                         </li>
                         @guest
                         <li class="nav-item submenu dropdown">
-                            <a href="{{ route('user.profile') }}" class="profile">
+                            <a href="{{ route('login') }}" class="profile">
                                 <button class="btn btn-warning mt-4">
                                     Login
                                 </button>

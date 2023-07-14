@@ -25,17 +25,8 @@ class allUserController extends Controller
 
     function menungguBayar() {
         $user = User::all()->where('id', Auth::user()->id)->first();
-        // $harga = Pesanan::pluck('qty')->where('user_id', Auth::user()->id)->first();
-        $pesanan = Pesanan::where('status','menunggu')->where('user_id',Auth::user()->id)->get();
-        // $harga = Pesanan::where('status','menunggu')->where('user_id',Auth::user()->id)->pluck('qty');
-        // dd($harga);
-
-        // $totalHarga = DB::table('pesanans')
-        // ->join('produks', 'pesanans.produk_id', '=', 'produks.id')
-        // ->select(DB::raw('SUM(pesanans.qty * produks.harga) as total_harga'))
-        // ->get();
-        // $total = $totalHarga[0]->total_harga;
-
+        $pesanan = Pesanan::where('status','menunggu_pembayaran')->where('user_id',Auth::user()->id)->get();
+        
         $harga = DB::table('produks')
             ->join('pesanans', 'produks.id', '=', 'pesanans.produk_id')
             ->where('status','=','menunggu')
@@ -43,36 +34,48 @@ class allUserController extends Controller
             ->select('pesanans.*', 'produks.harga')
             ->get();
 
-
-
-            // dd($harga);
-
-
-        // dd($totalHarga);
-
         return view('profile/menungguPembayaran')->with(compact('user','pesanan','harga'));
     }
 
     function sudahBayar() {
         $user = User::all()->where('id', Auth::user()->id)->first();
-        $barang = DB::table('pesanans')->where('user_id','=', Auth::user()->id)->where('status','=','sudah dibayar')->get();
-
-        return view('profile/pesananDibayar',compact('user','barang'));
+        $pesanan = Pesanan::where('status','sudah_dibayar')->where('user_id',Auth::user()->id)->get();
+        
+        $harga = DB::table('produks')
+            ->join('pesanans', 'produks.id', '=', 'pesanans.produk_id')
+            ->where('status','=','sudah_dibayar')
+            ->where('pesanans.user_id','=',Auth::user()->id)
+            ->select('pesanans.*', 'produks.harga')
+            ->get();
+        return view('profile/pesananDibayar',compact('user','pesanan','harga'));
     }
 
     function sudahDikirim() {
         $user = User::all()->where('id', Auth::user()->id)->first();
-        $barang = DB::table('pesanans')->where('user_id','=', Auth::user()->id)->where('status','=','selesai')->get();
-
-        return view('profile/sudahDikirim',compact('user','barang'));
+        $pesanan = Pesanan::where('status','sudah_dikirim')->where('user_id',Auth::user()->id)->get();
+        
+        $harga = DB::table('produks')
+            ->join('pesanans', 'produks.id', '=', 'pesanans.produk_id')
+            ->where('status','=','sudah_dikirim')
+            ->where('pesanans.user_id','=',Auth::user()->id)
+            ->select('pesanans.*', 'produks.harga')
+            ->get();
+        return view('profile/sudahDikirim',compact('user','pesanan','harga'));
     }
 
     function pesananDibatalkan() {
         $user = User::all()->where('id', Auth::user()->id)->first();
-        $barang = DB::table('pesanans')->where('user_id','=', Auth::user()->id)->where('status','=','batal')->get();
+        $pesanan = Pesanan::where('status','cancel')->where('user_id',Auth::user()->id)->get();
+        
+        $harga = DB::table('produks')
+            ->join('pesanans', 'produks.id', '=', 'pesanans.produk_id')
+            ->where('status','=','cancel')
+            ->where('pesanans.user_id','=',Auth::user()->id)
+            ->select('pesanans.*', 'produks.harga')
+            ->get();
       
 
-        return view('profile/pesananDibatalkan',compact('user','barang'));
+        return view('profile/pesananDibatalkan',compact('user','pesanan','harga'));
     }
     function formPenjual(User $user)  {
         
