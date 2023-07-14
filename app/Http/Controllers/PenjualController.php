@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategoris;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 
-class Penjual extends Controller
+
+class PenjualController extends Controller
 {
     public function create()
     {
-        return view('Produks.create');
+        $kategori = Kategoris::all();
+        return view('profile.addProduk',compact('kategori'));
     }
     
     /**
@@ -20,23 +23,31 @@ class Penjual extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'kode' => 'required',
+            'nama' => 'required',
+            'stok' => 'required',
+            'min_stok' => 'required',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'harga' => 'required',
+            'deskripsi_produk' => 'required',
+            'kategori_id' => 'required',
+            'user_id' => 'required',
         ]);
+
   
         $input = $request->all();
   
-        if ($image = $request->file('image')) {
-            $destinationPath = 'image/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
+        if ($gambar = $request->file('gambar')) {
+            $destinationPath = 'img_produk/';
+            $profilegambar = date('YmdHis') . "." . $gambar->getClientOriginalExtension();
+            $gambar->move($destinationPath, $profilegambar);
+            $input['gambar'] = "$profilegambar";
         }
     
         Produk::create($input);
-        return view('ddxszpenjual.addProduk')->with('success','Produk created successfully.');
+        return view('profile.addProduk')->with('success','Produk created successfully.');
     }
      
     public function show(Produk $Produk)

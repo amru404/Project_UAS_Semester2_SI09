@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 
-<head>
+<head>`
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Favicon-->
@@ -38,54 +38,8 @@
 <body>
 
 	<!-- Start Header Area -->
-	<header class="header_area sticky-header">
-		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light main_box">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="/pembeli"><img src="/assetuser/img/CEH.png" alt="" style="height: 55px;"></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="/pembeli">Home</a></li>
-							<li class="nav-item submenu"><a class="nav-link" href="{{ route('kategori') }}">Category</a></li>
-							<li class="nav-item submenu"><a class="nav-link" href="{{ route('kontak') }}">Contact</a></li>
-							
-							
-							
-							
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-
-							
-							<li class="nav-item"><a href="{{ route('cart') }}" class="cart"><span class="bi bi-cart3"></span></a></li>
-							<li class="nav-item">
-								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
-							</li>
-							<li class="nav-item submenu dropdown"><a href="{{ route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-		<div class="search_input" id="search_input_box">
-			<div class="container">
-				<form class="d-flex justify-content-between">
-					<input type="text" class="form-control" id="search_input" placeholder="Search Here">
-					<button type="submit" class="btn"></button>
-					<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-				</form>
-			</div>
-		</div>
-	</header>
 	<!-- End Header Area -->
-
+	@extends('template/navbar')
 	<!-- start banner Area -->
 	@yield ('content')
 
@@ -136,14 +90,14 @@
 					<div class="single-footer-widget mail-chimp">
 						<h6 class="mb-20">Instragram Feed</h6>
 						<ul class="instafeed d-flex flex-wrap">
-							<li><img src="img/i1.jpg" alt=""></li>
-							<li><img src="img/i2.jpg" alt=""></li>
-							<li><img src="img/i3.jpg" alt=""></li>
-							<li><img src="img/i4.jpg" alt=""></li>
-							<li><img src="img/i5.jpg" alt=""></li>
-							<li><img src="img/i6.jpg" alt=""></li>
-							<li><img src="img/i7.jpg" alt=""></li>
-							<li><img src="img/i8.jpg" alt=""></li>
+							<li><img src="assetuser/img/i1.jpg" alt=""></li>
+							<li><img src="assetuser/img/i2.jpg" alt=""></li>
+							<li><img src="assetuser/img/i3.jpg" alt=""></li>
+							<li><img src="assetuser/img/i4.jpg" alt=""></li>
+							<li><img src="assetuser/img/i5.jpg" alt=""></li>
+							<li><img src="assetuser/img/i6.jpg" alt=""></li>
+							<li><img src="assetuser/img/i7.jpg" alt=""></li>
+							<li><img src="assetuser/img/i8.jpg" alt=""></li>
 						</ul>
 					</div>
 				</div>

@@ -7,7 +7,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\allUserController;
- 
+use App\Http\Controllers\PenjualController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,7 @@ use App\Http\Controllers\allUserController;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('pembeli/index');
 });
 
 
@@ -63,28 +64,41 @@ Route::prefix('dashboard')->group(function(){
         [DashboardController::class,'order'])->name('orders');  
         
 });
-route::get('user/profile',[allUserController::class,'profile'])->name('user.profile');
 
-Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
-Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
+    Route::prefix('profile')->group(function(){
+        route::get('/',[allUserController::class,'profile'])->name('user.profile');
+        route::get('/menungguBayar',[allUserController::class,'menungguBayar'])->name('user.menungguBayar');
+        route::get('/sudahBayar',[allUserController::class,'sudahBayar'])->name('user.sudahBayar');
+        route::get('/sudahDikirim',[allUserController::class,'sudahDikirim'])->name('user.sudahDikrim');
+        route::get('/pesananDibatalkan',[allUserController::class,'pesananDibatalkan'])->name('user.pesananDibatalkan');
+        
+        Route::get('/formPenjual/{user}', [allUserController::class, 'formPenjual'])->name('formPenjual');
+        Route::put('/UpdatePenjual/{user}', [allUserController::class, 'addPenjual'])->name('updateRole');
+
+        Route::get('/addProduk}', [PenjualController::class, 'create'])->name('profile.create.produk');
+        Route::post('/storeProduk}', [PenjualController::class, 'store'])->name('profile.store.produk');
+
+
+    });
+
+
+
+
 
 
 
 route::get('/index',[allUserController::class,'index']);
 
-route::get('/index',
-    [allUserController::class,'index']);
-
-route::get('/index',[allUserController::class,'index']);
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
-route::get('/pembeli',[allUserController::class,'index']);
+route::get('/pembeli',[allUserController::class,'index'])->name('index');
 route::get('/detail',[allUserController::class,'detail'])->name('detail');
 route::get('/checkout',[allUserController::class,'checkout'])->name('checkout');
 route::get('/cart',[allUserController::class,'cart'])->name('cart');
 
 
-route::get('/index', [allUserController::class,'index']);
+route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+
+route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');
+
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
 route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');
-route::get('/index',[allUserController::class,'index']);
-route::get('/index',[allUserController::class,'index']);
