@@ -1,7 +1,7 @@
 @extends('profile/indexProfile')
 
 @section('breadcrumb')
-Belum Dibayar
+Pesanan Belum Dibayar
 @endsection
 
 <style>
@@ -15,7 +15,7 @@ Belum Dibayar
 <div class="col-lg-8">
     <div class="card mb-4">
       <div class="card-body">
-        <h5>Belum Dibayar</h5><br>
+        <h5>Pesanan Belum Dibayar</h5><br>
 
         {{-- {{$barang->Produk->nama}} --}}
 
@@ -36,20 +36,21 @@ Belum Dibayar
             @endforeach --}}
 
             @foreach ($pesanan as $data)
-            <div class="card text-dark mt-3 p-3" style="background-color: #ffeba7">
+            <div class="card text-white mt-3" style="background-color: #f77306; border-radius:20px">
             <div class="row">
-              <div class="col-xl-4 col-md-4 col-12">
-            <img src="{{ asset('img_produk/'.$data->Produk->gambar) }}" style="height: 150px; width:160px" alt="">
+            <div class="col-xl-4 col-md-4 col-12" style="background-image:url('{{ asset('img_produk/'.$data->Produk->gambar)}}');  background-position: bottom; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; border-radius:20px">
               </div>
-              <div class="col-xl-5 col-md-5 col-12">
+              <div class="col-xl-5 col-md-5 col-12 mt-4 mb-3">
             <h6>{{$data->Produk->nama}}</h6>
             <p>{{$data->status}} Pembayaran</p>
             <p>Quantity : {{$data->qty}}</p>
             <p>Total Harga : Rp. {{ number_format($data->qty * $data->Produk->harga,2)}}</p>
               </div>
 
-              <div class="col-xl-3 col-md-5 col-12">
-                <a href="" class="btn btn-sm btn-primary">Bayar Pesanan</a>
+              <div class="col-xl-3 col-md-5 col-12 mt-4 mb-3">
+                <small><i class="fa-solid fa-xmark" style="color: #ff0000;"></i> Pesanan Belum Dibayar</small>
               </div>
             </div>  
           </div>
