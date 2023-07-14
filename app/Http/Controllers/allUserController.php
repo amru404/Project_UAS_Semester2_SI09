@@ -11,6 +11,7 @@ use App\Models\tbl_kodepos;
 use Illuminate\Support\Facades\DB;
 use App\Models\Pesanan;
 
+
 class allUserController extends Controller
 {
 
@@ -24,9 +25,32 @@ class allUserController extends Controller
 
     function menungguBayar() {
         $user = User::all()->where('id', Auth::user()->id)->first();
-        $barang = DB::table('pesanans')->where('user_id','=', Auth::user()->id)->where('status','=','menunggu')->get();
+        // $harga = Pesanan::pluck('qty')->where('user_id', Auth::user()->id)->first();
+        $pesanan = Pesanan::where('status','menunggu')->where('user_id',Auth::user()->id)->get();
+        // $harga = Pesanan::where('status','menunggu')->where('user_id',Auth::user()->id)->pluck('qty');
+        // dd($harga);
 
-        return view('profile/menungguPembayaran',compact('user','barang'));
+        // $totalHarga = DB::table('pesanans')
+        // ->join('produks', 'pesanans.produk_id', '=', 'produks.id')
+        // ->select(DB::raw('SUM(pesanans.qty * produks.harga) as total_harga'))
+        // ->get();
+        // $total = $totalHarga[0]->total_harga;
+
+        $harga = DB::table('produks')
+            ->join('pesanans', 'produks.id', '=', 'pesanans.produk_id')
+            ->where('status','=','menunggu')
+            ->where('pesanans.user_id','=',Auth::user()->id)
+            ->select('pesanans.*', 'produks.harga')
+            ->get();
+
+
+
+            // dd($harga);
+
+
+        // dd($totalHarga);
+
+        return view('profile/menungguPembayaran')->with(compact('user','pesanan','harga'));
     }
 
     function sudahBayar() {
@@ -46,6 +70,7 @@ class allUserController extends Controller
     function pesananDibatalkan() {
         $user = User::all()->where('id', Auth::user()->id)->first();
         $barang = DB::table('pesanans')->where('user_id','=', Auth::user()->id)->where('status','=','batal')->get();
+      
 
         return view('profile/pesananDibatalkan',compact('user','barang'));
     }
