@@ -98,7 +98,7 @@ route::get('/index',[allUserController::class,'index']);
 
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
 route::get('/pembeli',[allUserController::class,'index'])->name('index');
-route::get('/detail',[allUserController::class,'detail'])->name('detail');
+Route::get('/detail/{id}', [allUserController::class, 'showDetail'])->name('detail');
 
 
 

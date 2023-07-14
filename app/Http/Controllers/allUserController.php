@@ -23,6 +23,15 @@ class allUserController extends Controller
         return view('profile/profile',compact('user','jualan'));
     }
 
+    public function showDetail($id)
+    {
+        // Mengambil data produk dari database berdasarkan ID
+        $product = Produk::find($id);
+
+        // Menampilkan halaman detail produk dan mengirimkan data produk
+        return view('pembeli/detail', compact('product'));
+    }
+
     function menungguBayar() {
         $user = User::all()->where('id', Auth::user()->id)->first();
         $pesanan = Pesanan::where('status','menunggu_pembayaran')->where('user_id',Auth::user()->id)->get();
@@ -200,9 +209,9 @@ class allUserController extends Controller
     function kategori(){
         return view('pembeli/kategori');
     }
-    function detail(){
-        return view('pembeli/detail');
-    }
+    // function detail(){
+    //     return view('pembeli/detail');
+    // }
     function checkout(){
         return view('pembeli/checkout');
     }

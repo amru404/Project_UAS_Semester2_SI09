@@ -187,7 +187,7 @@
 					<!-- single product -->
 					@foreach ($products as $product)
 					<div class="col-lg-3 col-md-6">
-						<a href="/detail" class="text-dark text-decoration-none">
+						<a href="{{route('detail',$product->id)}}" class="text-dark text-decoration-none">
 							<div class="card single-product p-1">
 							<img class="img-fluid" src="{{ asset('img_produk/'.$product->gambar) }}" alt="">
 							<div class="product-details ml-1">
