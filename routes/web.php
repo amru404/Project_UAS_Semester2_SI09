@@ -19,10 +19,12 @@ use App\Http\Controllers\PenjualController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+route::get('/',[allUserController::class,'index']);
 
-Route::get('/', function () {
-    return view('pembeli/index');
-});
+
+// Route::get('/', function () {
+//     return view('pembeli/index');
+// });
 
 
 Auth::routes();
@@ -81,6 +83,11 @@ Route::prefix('dashboard')->group(function(){
 
     });
 
+    Route::middleware(['auth'])->group(function () {
+        route::get('/checkout',[allUserController::class,'checkout'])->name('checkout');
+        route::get('/cart',[allUserController::class,'cart'])->name('cart');
+    });
+
 
 
 
@@ -91,14 +98,5 @@ route::get('/index',[allUserController::class,'index']);
 
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
 route::get('/pembeli',[allUserController::class,'index'])->name('index');
-route::get('/detail',[allUserController::class,'detail'])->name('detail');
-route::get('/checkout',[allUserController::class,'checkout'])->name('checkout');
-route::get('/cart',[allUserController::class,'cart'])->name('cart');
-
-
-route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
-
-route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');
-
-route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+Route::get('/detail/{id}', [allUserController::class, 'showDetail'])->name('detail');
 route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');

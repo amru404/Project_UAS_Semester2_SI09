@@ -21,8 +21,17 @@ class Produk extends Model
         return $this->hasOne(Kategori::class);
     }
 
+    
+    public function Pesanan(){
+        return $this->hasMany(Pesanan::class);
+    }
+
+    
+
     public function userID() {
         return $this->belongsTo(User::class);
       }
+
+   
    
 }
