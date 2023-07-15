@@ -69,20 +69,20 @@ class DashboardController extends Controller
             'harga'=>'required',
             'stok'=>'required',
             'min_stok'=>'required',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'deskripsi_produk'=>"nullable",
             'kategori_id'=>'required|exists:kategoris,id',
         ]);
-        $product = new Produk();
-        $product->kode = $request->kode;
-        $product->nama = $request->nama;
-        $product->harga = $request->harga;
-        $product->stok = $request->stok;
-        $product->min_stok = $request->min_stok;
-        $product->deskripsi_produk = $request->deskripsi_produk;
-        $product->kategori_id = $request->kategori_id;
-    
-        // Menyimpan produk baru ke dalam database
-        $product->save();
+        
+        $input = $request->all();
+        if ($gambar = $request->file('gambar')) {
+            $destinationPath = 'img_produk/';
+            $profilegambar = date('YmdHis') . "." . $gambar->getClientOriginalExtension();
+            $gambar->move($destinationPath, $profilegambar);
+            $input['gambar'] = "$profilegambar";
+        }
+        
+        Produk::addProduct($input);
         return redirect()->route('product')->with('Success', "Created Successfully");
     }
 
@@ -105,16 +105,19 @@ class DashboardController extends Controller
         ]);
         
 
-        $produk->kode = $request->kode;
-        $produk->nama = $request->nama;
-        $produk->harga = $request->harga;
-        $produk->stok = $request->stok;
-        $produk->min_stok = $request->min_stok;
-        $produk->deskripsi_produk = $request->deskripsi_produk;
-        $produk->kategori_id = $request->kategori_id;
+        $input = $request->all();
+  
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }else{
+            unset($input['image']);
+        }
+          
+        $produk->updateProduct($input);
     
-        // Menyimpan perubahan ke dalam database
-        $produk->save();
         compact('kategoris');
         return redirect()->route('product')->with('success', 'Product berhasil diupdate.');
         }
@@ -127,5 +130,26 @@ class DashboardController extends Controller
         return view('dashboards/Order/index',compact('order'));
     }
 
-    // public funtion addOrder()
+    public function addOrder(){
+        $pesanan = Pesanan::all();
+        return view('dashboards/Order/index',compact('pesanan'));
+    }
+    
+    public function storeOrder(Request $request){
+        $request->validate([
+            'kode'=> 'required',
+            'qty' => 'required',
+            'wktu_pesan'=> 'required',
+            'status'=>'required',
+            'produk_id' => 'required',
+            'user_id' => 'required'
+        ]);
+
+        $input = $request->all();
+        Pesanan::adddOrder($input);
+        return redirect()->route('order')->with('Success', "Created Successfully");
+    }
+
+    
+    
 }

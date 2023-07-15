@@ -32,7 +32,12 @@
             <label for="min_stok">Min Stok</label>
             <input type="text" name="min_stok" id="min_stok" value="{{ $produk->min_stok }}" class="form-control">
         </div>
-    
+        
+        <div class="form-group row">
+            <label for="gambar" class="col-4 col-form-label">Gambar Produk</label> 
+            <div class="col-8">
+              <input id="gambar" name="gambar" type="file" class="form-control" value="{{ $produk->gambar}}">
+            </div>
         <div class = "form-group">
             <label for="deskripsi_produk">Deskripsi Produk</label>
             <input type="text" name="deskripsi_produk" id="deskripsi_produk" value="{{ $produk->deskripsi_produk }}" class="form-control">
