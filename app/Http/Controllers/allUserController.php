@@ -215,9 +215,10 @@ class allUserController extends Controller
 
     public function kategori()
 {
-    $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
+    $kategoris = Kategoris::all();
+    $products = Produk::all(); // Mengambil semua data kategori dari tabel
 
-    return view('pembeli.kategori', compact('kategoris'));
+    return view('pembeli.kategori', compact('kategoris', 'products'));
 }
 
 public function showProductsByCategory($kategori)
@@ -227,6 +228,8 @@ public function showProductsByCategory($kategori)
 
     return view('pembeli.kategori', compact('produk'));
 }
+
+
 
 
     

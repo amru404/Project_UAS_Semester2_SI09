@@ -99,11 +99,17 @@ route::get('/index',[allUserController::class,'index']);
 // route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
 // web.php
 
-Route::get('/kategori/{kategori}', [AllUserController::class, 'showProductsByCategory'])
-    ->name('category.products');
 
-Route::get('/kategori', [AllUserController::class, 'kategori'])
-    ->name('kategori');
+
+    Route::prefix('kategori')->group(function(){
+        
+        Route::get('/kategori/{kategori}', [AllUserController::class, 'showProductsByCategory'])
+            ->name('category.products');
+
+        Route::get('/', [AllUserController::class, 'kategori'])
+             ->name('kategori');
+
+    });
 
 
 route::get('/pembeli',[allUserController::class,'index'])->name('index');
