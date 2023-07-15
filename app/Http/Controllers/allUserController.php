@@ -206,12 +206,29 @@ class allUserController extends Controller
         return view('pembeli/index', compact('products'));
     }
 
+    // public function kategori()
+    // {
+    // $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
+
+    // return view('pembeli.kategori', compact('kategoris'));
+    // }
+
     public function kategori()
-    {
+{
     $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
 
     return view('pembeli.kategori', compact('kategoris'));
-    }
+}
+
+public function showProductsByCategory($kategori)
+{
+    // Logika query untuk mengambil produk berdasarkan kategori
+    $produk = Produk::where('kategori_id', $kategori)->get();
+
+    return view('pembeli.kategori', compact('produk'));
+}
+
+
     
 
     // function kategori(){

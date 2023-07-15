@@ -96,7 +96,16 @@ Route::prefix('dashboard')->group(function(){
 
 route::get('/index',[allUserController::class,'index']);
 
-route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+// route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
+// web.php
+
+Route::get('/kategori/{kategori}', [AllUserController::class, 'showProductsByCategory'])
+    ->name('category.products');
+
+Route::get('/kategori', [AllUserController::class, 'kategori'])
+    ->name('kategori');
+
+
 route::get('/pembeli',[allUserController::class,'index'])->name('index');
 Route::get('/detail/{id}', [allUserController::class, 'showDetail'])->name('detail');
 route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');

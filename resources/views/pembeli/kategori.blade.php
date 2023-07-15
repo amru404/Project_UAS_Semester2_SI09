@@ -67,7 +67,7 @@
 				<div class="row">
 					<!-- single product -->
 					<div class="col-lg-4 col-md-6">
-						<a href="">
+						<a href="" class="text-decoration:none">
 							<div class="card single-product p-1">
 								<img class="img-fluid" src="/assetuser/img/product/p1.jpg" alt="">
 								<div class="product-details">
