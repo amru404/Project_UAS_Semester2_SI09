@@ -1,32 +1,32 @@
-@extends('template/dashboard/index')
+@extends('template/dashboards/index')
 @section('content')
 
 <div class="col">
     <div class="card-rounded-lg">
     <div class="card-body">
-        <h2>FORM INPUT PRODUK</h2>
+        <h2>FORM INPUT ORDER</h2>
 
-<form action="{{ route('product.store') }}" method="POST">
+<form action="{{-- route('product.store') --}}" method="POST">
     @csrf
 
     <div class = "form-group">
-        <label for="kode">Kode Produk</label>
+        <label for="kode">Kode</label>
         <input type="text" name="kode" id="kode" value="" class="form-control">
     </div>
 
     <div class = "form-group">
-        <label for="nama">Nama Produk</label>
-        <input type="text" name="nama" id="nama" value="" class="form-control">
+        <label for="qty">QTY</label>
+        <input type="text" name="qty" id="qty" value="" class="form-control">
     </div>
 
     <div class = "form-group">
-        <label for="harga">Harga Produk</label>
-        <input type="number" name="harga" id="harga" value="" class="form-control">
+        <label for="wktu_pesan">Waktu Pemesanan</label>
+        <input type="datetime-local" name="" id="wktu_pesan" value="" class="form-control">
     </div>
 
     <div class = "form-group">
-        <label for="stok">Stok</label>
-        <input type="text" name="stok" id="stok" value="" class="form-control">
+        <label for="status">Status</label>
+        <input type="text" name="status" id="status" value="" class="form-control">
     </div>
 
     <div class = "form-group">
@@ -69,5 +69,5 @@
         
     </div>    
     </div>    
-</div>    
+</div> 
 @endsection
