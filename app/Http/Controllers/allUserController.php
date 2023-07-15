@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\tbl_kodepos;
 use Illuminate\Support\Facades\DB;
 use App\Models\Pesanan;
+use App\Models\Kategoris;
 
 
 class allUserController extends Controller
@@ -204,11 +205,18 @@ class allUserController extends Controller
     
         return view('pembeli/index', compact('products'));
     }
+
+    public function kategori()
+    {
+    $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
+
+    return view('pembeli.kategori', compact('kategoris'));
+    }
     
 
-    function kategori(){
-        return view('pembeli/kategori');
-    }
+    // function kategori(){
+    //     return view('pembeli/kategori');
+    // }
     // function detail(){
     //     return view('pembeli/detail');
     // }

@@ -99,12 +99,4 @@ route::get('/index',[allUserController::class,'index']);
 route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
 route::get('/pembeli',[allUserController::class,'index'])->name('index');
 Route::get('/detail/{id}', [allUserController::class, 'showDetail'])->name('detail');
-
-
-
-route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
-
-route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');
-
-route::get('/kategori',[allUserController::class,'kategori'])->name('kategori');
 route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');
