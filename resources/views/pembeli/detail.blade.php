@@ -29,25 +29,26 @@
 // Menampilkan informasi produk di halaman detail
 ?>
 <div class="col-lg-5 offset-lg-1">
-	<div class="s_product_text">
-		<h3>{{ $product->nama }}</h3>
-		<h2>{{ number_format($product->harga) }}</h2>
-		<ul class="list">
-			<li><a class="active" href="#"><span>Category</span> : Household</a></li>
-			<li><a href="#"><span>Availibility</span> : In Stock</a></li>
-		</ul>
-		<p>{{ $product->deskripsi_produk }}</p>
-		<div class="product_count">
-			<label for="qty">Quantity:</label>
-			<input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-			<button onclick="var result = document.getElementById('sst'); var sst = result.value; if (!isNaN(sst)) result.value++; return false;" class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
-			<button onclick="var result = document.getElementById('sst'); var sst = result.value; if (!isNaN(sst) && sst > 0) result.value--; return false;" class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-		</div>
-		<div class="card_area d-flex align-items-center">
-			<a class="primary-btn" href="#">Add to Cart</a>
-		</div>
-	</div>
+    <div class="s_product_text">
+        <h3>{{ $product->nama }}</h3>
+        <h2>{{ number_format($product->harga) }}</h2>
+        <ul class="list">
+            <li><a class="active" href="#"><span>Category</span> : Household</a></li>
+            <li><a href="#"><span>Availability</span> : In Stock</a></li>
+        </ul>
+        <p>{{ $product->deskripsi_produk }}</p>
+        <div class="product_count">
+            <label for="qty">Quantity:</label>
+            <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
+            <button onclick="var result = document.getElementById('sst'); var sst = result.value; if (!isNaN(sst)) result.value++; return false;" class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
+            <button onclick="var result = document.getElementById('sst'); var sst = result.value; if (!isNaN(sst) && sst > 0) result.value--; return false;" class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
+        </div>
+        <div class="card_area d-flex align-items-center">
+            <a class="primary-btn" href="{{ route('checkout', ['nama' => $product->nama, 'harga' => $product->harga]) }}">Checkout Now</a>
+        </div>
+    </div>
 </div>
+
 
 				</div>
 			</div>

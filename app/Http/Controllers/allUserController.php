@@ -206,13 +206,49 @@ class allUserController extends Controller
         return view('pembeli/index', compact('products'));
     }
 
+<<<<<<< HEAD
     public function kategori( Request $request)
     {
     
     $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
+=======
+    // public function kategori()
+    // {
+    // $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
 
-    return view('pembeli.kategori', compact('kategoris'));
-    }
+    // return view('pembeli.kategori', compact('kategoris'));
+    // }
+
+    public function kategori()
+{
+    $kategoris = Kategoris::all();
+    $products = Produk::all(); // Mengambil semua data kategori dari tabel
+
+    return view('pembeli.kategori', compact('kategoris', 'products'));
+}
+
+function sidebar(){
+
+    $kategoris = Kategoris::all();
+    // dd($kategoris);
+    return view ('template/sidebar',compact('kategoris'));
+    
+}
+
+public function showProductsByCategory($kategori)
+{
+    
+    // Logika query untuk mengambil produk berdasarkan kategori
+    $products = Produk::where('kategori_id', $kategori)->get();
+
+    return view('pembeli.kategori', compact('products'));
+}
+
+
+
+
+>>>>>>> a7292a3dc44cd953b7a1836c96ffc7064fbd7366
+
     
 
     // function kategori(){
