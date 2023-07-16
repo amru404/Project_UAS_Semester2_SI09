@@ -206,18 +206,6 @@ class allUserController extends Controller
         return view('pembeli/index', compact('products'));
     }
 
-<<<<<<< HEAD
-    public function kategori( Request $request)
-    {
-    
-    $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
-=======
-    // public function kategori()
-    // {
-    // $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
-
-    // return view('pembeli.kategori', compact('kategoris'));
-    // }
 
     public function kategori()
 {
@@ -245,20 +233,19 @@ public function showProductsByCategory($kategori)
 }
 
 
-
-
->>>>>>> a7292a3dc44cd953b7a1836c96ffc7064fbd7366
-
-    
-
     // function kategori(){
     //     return view('pembeli/kategori');
     // }
     // function detail(){
     //     return view('pembeli/detail');
     // }
-    function checkout(){
-        return view('pembeli/checkout');
+    function checkout($id, Request $request){
+        $product = Produk::where('id',$id)->first();
+        // dd($request->qty);
+        $total = $request->qty * $product->harga;
+        // dd($total);
+        $qty= $request->qty;
+        return view('pembeli/checkout',compact('product','total','qty'));
     }
     function cart(){
         return view('pembeli/cart');
