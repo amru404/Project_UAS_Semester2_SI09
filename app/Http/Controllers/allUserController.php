@@ -206,12 +206,6 @@ class allUserController extends Controller
         return view('pembeli/index', compact('products'));
     }
 
-<<<<<<< HEAD
-    public function kategori( Request $request)
-    {
-    
-    $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
-=======
     // public function kategori()
     // {
     // $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
@@ -237,7 +231,6 @@ public function showProductsByCategory($kategori)
 
 
 
->>>>>>> a7292a3dc44cd953b7a1836c96ffc7064fbd7366
 
     
 
