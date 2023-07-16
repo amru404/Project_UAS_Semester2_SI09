@@ -38,7 +38,7 @@
   <!--Start sidebar-wrapper-->
    <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
      <div class="brand-logo">
-      <a href="{{route('category')}}">
+      <a href="{{route('index')}}">
        <img src="/assetuser/img/icon_aceh.png" class="logo-icon" alt="logo icon">
        <h5 class="logo-text">Aceh Pedia</h5>
      </a>
@@ -58,7 +58,7 @@
       </li>
 
       <li>
-        <a href="{{-- route('order')--}}">
+        <a href="{{ route('order') }}">
           <i class="zmdi zmdi-assignment"></i> <span>Order</span>
         </a>
       </li>
