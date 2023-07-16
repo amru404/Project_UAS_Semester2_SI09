@@ -18,7 +18,24 @@
 <!-- End Banner Area -->
 <div class="container">
 	<div class="row">
+<<<<<<< HEAD
+		<div class="col-xl-3 col-lg-4 col-md-5">
+			<div class="sidebar-categories">
+				<div class="head">Browse Categories</div>
+				@foreach ($kategoris as $kategori)
+				<ul class="main-categories">
+					<li class="main-nav-list">
+						<a data-toggle="collapse" href="#" aria-expanded="false" aria-controls="fruitsVegetable" class="text-decoration-none">
+							<span class="lnr lnr-arrow-right"></span>{{ $kategori->name }}
+						</a>
+					</li>
+				</ul> 
+				@endforeach
+			</div>
+		</div>
+=======
 		@include ('template/sidebar')
+>>>>>>> a7292a3dc44cd953b7a1836c96ffc7064fbd7366
 		<div class="col-xl-9 col-lg-8 col-md-7">
 			<!-- Start Filter Bar -->
 			@include ('template/sorting')

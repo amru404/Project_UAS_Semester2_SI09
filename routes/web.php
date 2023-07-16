@@ -63,7 +63,18 @@ Route::prefix('dashboard')->group(function(){
     Route::delete('/product/{produk}',
         [DashboardController::class,'deleteProduct'])->name('product.destroy');
     Route::get('/order',
-        [DashboardController::class,'order'])->name('orders');  
+        [DashboardController::class,'order'])->name('order'); 
+    Route::get('/order/add',
+        [DashboardController::class,'addOrder']) -> name ("order.add") ;
+    Route::post('/order',
+        [DashboardController::class,'storeOrder'])->name('order.store');
+    Route::get('/order,{pesanan}/edit',
+        [DashboardController::class,'editOrder'])->name('order.edit');
+    Route::put('/order/{pesanan}',
+        [DashboardController::class,'updateOrder'])->name('order.update');
+    Route::delete('order/{pesanan}',
+        [DashboardController::class, 'deleteOrder'])->name(('order.delete'));
+    
         
 });
 

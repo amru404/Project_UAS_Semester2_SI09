@@ -61,22 +61,22 @@
                         @endguest
 
 
-                        <!-- <li class="nav-item submenu dropdown"><a href="{{ route('user.profile') }}" class="profile"><span>login</span></a></li>
-						<li class="nav-item submenu dropdown"><a href="{{ route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a></li> -->
-                        <!-- <li class="nav-item submenu dropdown"><a href="{{ route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a>
+                        <!-- <li class="nav-item submenu dropdown"><a href=" route('user.profile') }}" class="profile"><span>login</span></a></li>
+						<li class="nav-item submenu dropdown"><a href=" route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a></li> -->
+                        <!-- <li class="nav-item submenu dropdown"><a href=" route('user.profile') }}" class="profile"><span class="bi bi-person-circle"></span></a>
                                 <ul class="dropdown" style="left: -122px;">
-                                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                                    <li class="nav-item"><a class="nav-link" href=" route('login') }}">Login</a></li>
 								    <li class="nav-item"><a class="nav-link" href="single-blog.html">Profile</a></li>    
                                 </ul>
                             </li> -->
                         <!-- <li class="nav-item submenu dropdown">
                             <a
-                                href="{{ route('user.profile') }}"
+                                href=" route('user.profile') }}"
                                 class="profile"
                             >
                                 <span class="bi bi-person-circle"></span>
                             </a>
-                            @guest
+                            {{-- @guest --}}
                             <ul class="dropdown" style="left: -122px">
                                 <li class="nav-item">
                                     <a
@@ -91,7 +91,7 @@
                                     >
                                 </li>
                             </ul>
-                            @endguest
+                            {{-- @endguest --}}
                         </li> -->
                     </ul>
                 </div>
