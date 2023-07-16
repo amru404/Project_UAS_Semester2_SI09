@@ -95,7 +95,7 @@ Route::prefix('dashboard')->group(function(){
     });
 
     Route::middleware(['auth'])->group(function () {
-        route::get('/checkout',[allUserController::class,'checkout'])->name('checkout');
+        // route::get('/checkout',[allUserController::class,'checkout'])->name('checkout');
         route::get('/cart',[allUserController::class,'cart'])->name('cart');
     });
 
@@ -128,4 +128,5 @@ route::get('/index',[allUserController::class,'index']);
 
 route::get('/pembeli',[allUserController::class,'index'])->name('index');
 Route::get('/detail/{id}', [allUserController::class, 'showDetail'])->name('detail');
+Route::get('/checkout/{id}', [allUserController::class, 'checkout'])->name('checkout');
 route::get('/kontak',[allUserController::class,'kontak'])->name('kontak');

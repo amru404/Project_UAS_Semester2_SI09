@@ -207,17 +207,6 @@ class allUserController extends Controller
     }
 
 
-    // public function kategori( Request $request)
-    // {
-    
-    // $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
-    // public function kategori()
-    // {
-    // $kategoris = Kategoris::all(); // Mengambil semua data kategori dari tabel
-
-    // return view('pembeli.kategori', compact('kategoris'));
-    //  }
-
     public function kategori()
 {
     $kategoris = Kategoris::all();
@@ -226,38 +215,21 @@ class allUserController extends Controller
     return view('pembeli.kategori', compact('kategoris', 'products'));
 }
 
-function sidebar(){
-
-    $kategoris = Kategoris::all();
-    // dd($kategoris);
-    return view ('template/sidebar',compact('kategoris'));
-    
-}
-
 public function showProductsByCategory($kategori)
 {
-    
     // Logika query untuk mengambil produk berdasarkan kategori
-    $products = Produk::where('kategori_id', $kategori)->get();
+    $produk = Produk::where('kategori_id', $kategori)->get();
 
-    return view('pembeli.kategori', compact('products'));
+    return view('pembeli.kategori', compact('produk'));
 }
 
-
-
-
-
-
-    
-
-    // function kategori(){
-    //     return view('pembeli/kategori');
-    // }
-    // function detail(){
-    //     return view('pembeli/detail');
-    // }
-    function checkout(){
-        return view('pembeli/checkout');
+    function checkout($id, Request $request){
+        $product = Produk::where('id',$id)->first();
+        // dd($request->qty);
+        $total = $request->qty * $product->harga;
+        // dd($total);
+        $qty= $request->qty;
+        return view('pembeli/checkout',compact('product','total','qty'));
     }
     function cart(){
         return view('pembeli/cart');
