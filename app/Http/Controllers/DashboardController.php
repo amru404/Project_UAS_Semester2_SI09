@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Kategoris;
 use App\Models\Pesanan;
 use App\Models\Produk;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+// use Illuminate\Foundation\Auth\User;
 
 class DashboardController extends Controller
 {
@@ -50,9 +52,11 @@ class DashboardController extends Controller
         return redirect()->route('category')->with('success', 'Kategori berhasil diupdate.');
     }
 
-    public function product(){
-        $produk=Produk::all();
-        return view('/dashboards/Product/index',compact('produk'));
+    public function product()
+    {
+        $produk = Produk::all();
+        $kategoris = Kategoris::pluck('name', 'id');
+        return view('/dashboards/Product/index', compact('produk', 'kategoris'));
     }
     
     public function addproduct(){
@@ -127,12 +131,15 @@ class DashboardController extends Controller
     }
     public function order(){
         $order = Pesanan::all();
-        return view('dashboards/Order/index',compact('order'));
+        $produk = Produk::pluck('nama', 'id');
+        $user = User::pluck('name', 'id');
+        return view('dashboards/Order/index',compact('order', 'produk', 'user'));
     }
 
     public function addOrder(){
-        $pesanan = Pesanan::all();
-        return view('dashboards/Order/index',compact('pesanan'));
+        $item = Produk::all();
+        $person = User::all();
+        return view('dashboards/Order/add',compact('item', 'person'));
     }
     
     public function storeOrder(Request $request){
@@ -141,15 +148,38 @@ class DashboardController extends Controller
             'qty' => 'required',
             'wktu_pesan'=> 'required',
             'status'=>'required',
-            'produk_id' => 'required',
-            'user_id' => 'required'
+            'produk_id' => 'required|exists:produks,id',
+            'user_id' => 'required|exists:users,id'
         ]);
 
         $input = $request->all();
-        Pesanan::adddOrder($input);
+        Pesanan::addOrder($input);
         return redirect()->route('order')->with('Success', "Created Successfully");
     }
 
+    public function updateOrder(Request $request, Pesanan $pesanan, User $user, Produk $produk){
+        $user = User::pluck('name','id');
+        $produk=Produk::pluck('nama','id');
+        $request->validate([
+            'kode'=> ['required'],
+            'qty' =>['required'],
+            'wktu_pesan'=> ['required'],
+            'status'=> ['required'],
+            'produk_id' => 'required|exists:produks,id',
+            'user_id' => 'required|exists:users,id',
+        ]);
+        
+        $input = $request->all();
+        $pesanan->orderProduct($input);
+        compact('user','produk');
+        return redirect()->route('order')->with('success', 'Order Update Successfully');
+    }
+
+    public function editOrder(Pesanan $pesanan, Produk $produk, User $user){
+        $user = User::pluck('name','id');
+        $produk=Produk::pluck('nama','id');
+        return view('dashboards/order/edit', compact('produk','kategoris'));
+    }
     
     
 }

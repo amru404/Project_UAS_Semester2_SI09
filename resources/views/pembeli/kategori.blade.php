@@ -30,7 +30,7 @@
 							<span class="lnr lnr-arrow-right"></span>{{ $kategori->name }}
 						</a>
 					</li>
-				</ul>
+				</ul> 
 				@endforeach
 			</div>
 		</div>

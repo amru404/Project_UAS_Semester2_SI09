@@ -5,7 +5,7 @@
         <div class="card-rounded-lg">
             <div class="card-body">
                 <h5 class="card-title">Orders</h5>
-                <a href="{{-- route('addOrder')--}}" class="btn btn-transparent btn-outline-info shadow mb-3 text-white"> Add Order </a>
+                <a href="{{ route('order.add') }}" class="btn btn-transparent btn-outline-info shadow mb-3 text-white"> Add Order </a>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -29,8 +29,12 @@
                                 <td>{{ $pesanan->qty }}</td>
                                 <td>{{ $pesanan->wktu_pesan }}</td>
                                 <td>{{ $pesanan->status }}</td>
-                                <td>{{ $pesanan->produk_id }}</td>
-                                <td>{{ $pesanan->user_id }}</td>
+                                <td>  @if(isset($produk [$pesanan->produk_id]))
+                                    {{ $produk[$pesanan->produk_id] }}
+                                        @endif  </td>
+                                <td>  @if(isset($user [$pesanan->user_id]))
+                                    {{ $user[$pesanan->user_id] }}
+                                        @endif</td>
                                 <td> <a href="{{-- route('product.edit', $pesanan) --}}" class="btn btn-transparent btn-outline-warning shadow mb-3 text-white">Edit</a>
                                     <form action="{{-- route('product.destroy', $pesanan) --}}" method="POST" style="display: inline">
                                         @csrf

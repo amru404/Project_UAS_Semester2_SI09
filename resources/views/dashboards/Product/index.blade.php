@@ -34,7 +34,9 @@
               <td>{{ $item->min_stok }}</td>
               <td>{{ $item->gamber }}</td>
               <td>{{ $item->deskripsi_produk }}</td>
-              <td>{{ $item->kategori_id }}</td>
+              <td>  @if(isset($kategoris[$item->kategori_id]))
+                {{ $kategoris[$item->kategori_id] }}
+                @endif  </td>
               <td> <a href="{{ route('product.edit', $item) }}" class="btn btn-transparent btn-outline-warning shadow mb-3 text-white">Edit</a>
                 <form action="{{ route('product.destroy', $item) }}" method="POST" style="display: inline">
                     @csrf

@@ -13,6 +13,12 @@ class Pesanan extends Model
     public $timestamps = false;
     protected $fillable = ['kode','qty','wktu_pesan','status','produk_id','user_id',];
 
+    
+    public static function addOrder($input)
+    {
+        return self::create($input);
+    }
+
     public function Produk() {
     return $this->belongsTo(Produk::class, 'produk_id');
         }
