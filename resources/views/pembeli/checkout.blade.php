@@ -41,7 +41,7 @@
                             </div>
                             <p><b>Silakan transfer ke Rekening dibawah ini</b><br>
                                 BCA: 7005378753<br>
-                                Atas Nama: Tegar Ardiansyah</p>
+                                Atas Nama: kelompok PW</p>
                             <form action="" class="bg-white p-3">
                                 <b><label for="">Bukti transfer</label></b>
                                 <br>
