@@ -106,6 +106,9 @@ route::get('/index',[allUserController::class,'index']);
         Route::get('/kategori/{kategori}', [AllUserController::class, 'showProductsByCategory'])
             ->name('category.products');
 
+            Route::get('sidebar', [AllUserController::class, 'sidebar'])
+                ->name('category.sidebar');
+
         Route::get('/', [AllUserController::class, 'kategori'])
              ->name('kategori');
 

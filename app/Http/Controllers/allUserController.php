@@ -221,12 +221,21 @@ class allUserController extends Controller
     return view('pembeli.kategori', compact('kategoris', 'products'));
 }
 
+function sidebar(){
+
+    $kategoris = Kategoris::all();
+    // dd($kategoris);
+    return view ('template/sidebar',compact('kategoris'));
+    
+}
+
 public function showProductsByCategory($kategori)
 {
+    
     // Logika query untuk mengambil produk berdasarkan kategori
-    $produk = Produk::where('kategori_id', $kategori)->get();
+    $products = Produk::where('kategori_id', $kategori)->get();
 
-    return view('pembeli.kategori', compact('produk'));
+    return view('pembeli.kategori', compact('products'));
 }
 
 
