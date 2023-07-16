@@ -25,11 +25,14 @@
                     <div class="order_box">
                         <h2>Your Order</h2>
                         <ul class="list text">
-                            <li><a href="#">Product <span>Total</span></a></li>
-                            <li><a href="#">{{ $_GET['nama'] ?? '' }} <span class="last">${{ $_GET['harga'] ?? '' }}</span></a></li>
+                            <li><a href="#">Nama Produk <span class="last">{{$product->nama}}</span></a></li>
+                            <li><a href="#">Harga <span class="last">{{$product->harga}}</span></a></li>
+                            <li><a href="#">Quantity <span class="last">{{$qty}}</span></a></li>
+
                         </ul>
+
                         <ul class="list list_2">
-                            <li><a href="#">Total <span>${{ $_GET['harga'] ?? '' }}</span></a></li>
+                            <li><a href="#">Total <span>${{ $total }}</span></a></li>
                         </ul>
                        
                         <div class="payment_item active">

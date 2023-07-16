@@ -38,13 +38,15 @@
         </ul>
         <p>{{ $product->deskripsi_produk }}</p>
         <div class="product_count">
+			<form action="{{ route('checkout', $product->id)}}">
             <label for="qty">Quantity:</label>
-            <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
+            <input type="text" name="qty" id="sst" maxlength="12" title="Quantity:" class="input-text qty">
             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if (!isNaN(sst)) result.value++; return false;" class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if (!isNaN(sst) && sst > 0) result.value--; return false;" class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
         </div>
         <div class="card_area d-flex align-items-center">
-            <a class="primary-btn" href="{{ route('checkout', ['nama' => $product->nama, 'harga' => $product->harga]) }}">Checkout Now</a>
+            <button type="submit" class="primary-btn">Checkout Now</button>
+		</form>
         </div>
     </div>
 </div>
