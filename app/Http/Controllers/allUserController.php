@@ -218,9 +218,9 @@ class allUserController extends Controller
 public function showProductsByCategory($kategori)
 {
     // Logika query untuk mengambil produk berdasarkan kategori
-    $produk = Produk::where('kategori_id', $kategori)->get();
+    $products = Produk::where('kategori_id', $kategori)->get();
 
-    return view('pembeli.kategori', compact('produk'));
+    return view('pembeli.kategori', compact('products'));
 }
 
     function checkout($id, Request $request){

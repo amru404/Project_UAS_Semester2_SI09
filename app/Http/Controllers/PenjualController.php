@@ -47,7 +47,7 @@ class PenjualController extends Controller
         }
     
         Produk::create($input);
-        return view('profile.addProduk')->with('success','Produk created successfully.');
+        return view('user.profile')->with('success','Produk created successfully.');
     }
      
     public function show(Produk $Produk)
