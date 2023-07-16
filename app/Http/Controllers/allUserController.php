@@ -241,6 +241,7 @@ public function showProductsByCategory($kategori)
 
 
 
+
     
 
     // function kategori(){
