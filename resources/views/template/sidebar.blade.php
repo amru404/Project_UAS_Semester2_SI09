@@ -14,12 +14,12 @@
 						</a>
 					</li>
 					<li class="main-nav-list">
-						<a href="{{route('login')}}" aria-expanded="false" aria-controls="fruitsVegetable" class="text-decoration-none">
+						<a href="{{route('category.products', 3)}}" aria-expanded="false" aria-controls="fruitsVegetable" class="text-decoration-none">
 							<span class="lnr lnr-arrow-right"></span>Hoodie
 						</a>
 					</li>
 					<li class="main-nav-list">
-						<a href="" aria-expanded="false" aria-controls="fruitsVegetable" class="text-decoration-none">
+						<a href="{{route('category.products', 4)}}" aria-expanded="false" aria-controls="fruitsVegetable" class="text-decoration-none">
 							<span class="lnr lnr-arrow-right"></span>Accessories
 						</a>
 					</li>

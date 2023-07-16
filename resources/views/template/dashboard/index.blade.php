@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <meta name="description" content=""/>
   <meta name="author" content=""/>
-  <title>Understimate Dashboard</title>
+  <title>Aceh Pedia</title>
   <!-- loader-->
   <link href="{{ asset('template/css/pace.min.css') }}" rel="stylesheet"/>
   <script src="{{ asset('template/js/pace.min.js') }}"></script>
   <!--favicon-->
-  <link rel="icon" href="{{ asset('template/images/favicon.ico') }}" type="image/x-icon">
+  <link rel="icon" href="/assetuser/img/icon_aceh.png" type="">
   <!-- Vector CSS -->
   <link href="{{ asset('template/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet"/>
   <!-- simplebar CSS-->
@@ -39,8 +39,8 @@
    <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
      <div class="brand-logo">
       <a href="{{route('category')}}">
-       <img src="{{ asset('template/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
-       <h5 class="logo-text">Understimate Admin</h5>
+       <img src="/assetuser/img/icon_aceh.png" class="logo-icon" alt="logo icon">
+       <h5 class="logo-text">Aceh Pedia</h5>
      </a>
    </div>
    <ul class="sidebar-menu do-nicescrol">
