@@ -5,7 +5,7 @@
         <div class="card-rounded-lg">
             <div class="card-body">
                 <h5 class="card-title">Orders</h5>
-                <a href="{{ route('order.add') }}" class="btn btn-transparent btn-outline-info shadow mb-3 text-white"> Add Order </a>
+                <a href="{{-- route('order.add') --}}" class="btn btn-transparent btn-outline-info shadow mb-3 text-white"> Add Order </a>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>

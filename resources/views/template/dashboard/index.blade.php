@@ -58,7 +58,7 @@
       </li>
 
       <li>
-        <a href="{{ route('order') }}">
+        <a href="{{ route('orders') }}">
           <i class="zmdi zmdi-assignment"></i> <span>Order</span>
         </a>
       </li>

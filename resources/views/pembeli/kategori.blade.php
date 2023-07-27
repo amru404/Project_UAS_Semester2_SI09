@@ -38,7 +38,7 @@
 							<div class="product-details ml-1">
 								<h6>{{ $product->nama }}</h6>
 								<div class="price">
-									<h6>{{ number_format($product->harga) }}</h6>
+									<h6>Rp. {{ number_format($product->harga) }}</h6>
 								</div>
 								<div class="prd-bottom">
 
